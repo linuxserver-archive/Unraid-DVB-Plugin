@@ -4,7 +4,7 @@
 <!ENTITY author    "CHBMB">
 <!ENTITY version   "2016.02.14c">
 <!ENTITY md5       "e1f576351f141f54d6ad954947fe9589">
-<!ENTITY launch    "Settings">
+<!ENTITY launch    "Settings/mediabuild">
 <!ENTITY plugdir   "/usr/local/emhttp/plugins/&name;">
 <!ENTITY github    "linuxserver/mediabuild">
 <!ENTITY pluginURL "https://raw.githubusercontent.com/&github;/master/plugins/&name;.plg">
