@@ -2,8 +2,8 @@
 <!DOCTYPE PLUGIN [
 <!ENTITY name      "mediabuild">
 <!ENTITY author    "CHBMB">
-<!ENTITY version   "2016.02.14b">
-<!ENTITY md5       "554378b63ec46529c2328b755e5bae4d">
+<!ENTITY version   "2016.02.14c">
+<!ENTITY md5       "e1f576351f141f54d6ad954947fe9589">
 <!ENTITY launch    "Settings">
 <!ENTITY plugdir   "/usr/local/emhttp/plugins/&name;">
 <!ENTITY github    "linuxserver/mediabuild">
