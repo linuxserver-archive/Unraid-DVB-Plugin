@@ -108,7 +108,7 @@ $(function()
 
 </script>
 
-Currently Running:  unRaid version <?=$unRaidVersion?>  <?=$driverVersion?>
+Currently Running:  unRaid version <?=$unRaidVersion?>&nbsp;&nbsp;&nbsp;<?=$driverVersion?>
 
 Available Media Builds:
 
