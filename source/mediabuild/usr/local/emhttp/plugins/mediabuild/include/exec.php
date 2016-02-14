@@ -5,6 +5,9 @@ $mediaPaths['sources'] = $mediaPaths['tempFiles']."/sources.json";
 $mediaPaths['sources'] = $mediaPaths['tempFiles']."/sources.json";
 $mediaPaths['reboot'] = $mediaPaths['tempFiles']."/reboot";
 
+if ( ! is_dir($mediaPaths['tempFiles']) ) {
+  exec("mkdir -p ".$mediaPaths['tempFiles']);
+}
 
 function download_url($url, $path = "", $bg = false){
   exec("curl --max-time 60 --silent --insecure --location --fail ".($path ? " -o '$path' " : "")." $url ".($bg ? ">/dev/null 2>&1 &" : "2>/dev/null"), $out, $exit_code );
@@ -151,5 +154,12 @@ case 'build_buttons':
     $o .= "</select>";
   }
   echo $o;
+  break;
+
+case "check_reboot":
+  if ( is_file("/tmp/mediabuild/reboot") ) {
+    echo "reboot required";
+  }
+  break;
 }
 ?>

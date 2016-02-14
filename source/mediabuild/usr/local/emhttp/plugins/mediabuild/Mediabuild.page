@@ -62,11 +62,21 @@ function installBuild()
     showLoaderOnConfirm: true,
     showCancelButton: true
   },
-  function ()
+  function()
   {
-    openBox("/plugins/mediabuild/include/install.sh","Installing Build",400,400,true);
+    openBox("/plugins/mediabuild/include/install.sh&arg1="+selected,"Installing "+selectedText,500,500);
+    setInterval(function() {
+      checkReboot();
+    }, 1000);
   });
 }
+
+function checkReboot() {
+    $.post(URL,{action:'check_reboot'},function(data){
+      if (data){
+        $("#reboot").show();
+      }
+    });  }
 
 $(function()
 {

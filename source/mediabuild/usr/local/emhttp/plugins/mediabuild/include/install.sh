@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "install shit happens here"
-echo "reboot idiot" > /tmp/mediabuild/reboot
+/usr/bin/php -q /usr/local/emhttp/plugins/mediabuild/include/install.php $1
+
 
 
