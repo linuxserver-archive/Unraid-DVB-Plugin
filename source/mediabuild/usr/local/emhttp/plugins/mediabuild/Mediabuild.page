@@ -7,6 +7,7 @@ Title="Media Build"
 
 $version = parse_ini_file("/etc/unraid-version");
 $unRaidVersion = $version['version'];
+$driverVersion = @file_get_contents("/etc/unraid-media");
 
 $reboot = (is_file("/tmp/mediabuild/reboot")) ? "true" : "false";
 
@@ -107,7 +108,7 @@ $(function()
 
 </script>
 
-Currently Running:  unRaid version <?=$unRaidVersion?>
+Currently Running:  unRaid version <?=$unRaidVersion?>  <?=$driverVersion?>
 
 Available Media Builds:
 
