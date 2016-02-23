@@ -1,12 +1,12 @@
 <?xml version='1.0' standalone='yes'?>
 <!DOCTYPE PLUGIN [
-<!ENTITY name      "mediabuild">
+<!ENTITY name      "Unraid-DVB">
 <!ENTITY author    "CHBMB">
 <!ENTITY version   "2016.02.14d">
 <!ENTITY md5       "b13c09d85e007a23b6183352b9144d9e">
 <!ENTITY launch    "Settings/Mediabuild">
 <!ENTITY plugdir   "/usr/local/emhttp/plugins/&name;">
-<!ENTITY github    "linuxserver/mediabuild">
+<!ENTITY github    "CHBMB/Unraid-DVB-Plugin">
 <!ENTITY pluginURL "https://raw.githubusercontent.com/&github;/master/plugins/&name;.plg">
 ]>
 
