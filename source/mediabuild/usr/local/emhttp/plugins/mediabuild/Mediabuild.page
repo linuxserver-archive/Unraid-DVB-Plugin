@@ -164,7 +164,7 @@ $dvb_adapter = file_exists( "/dev/dvb/adapter0/frontend0") ? "yes" : "no";
 			<tr>
 				<td>DVB Kernel:</td>
 				<?if ($mediatree=="yes"):?>
-					<td style="color:green">Detected</td>
+					<td style="color:green"><b>Detected</b></td>
 				<?else:?>
 					<td style="color:green"><b>Not Detected</b></td>
                 <?endif;?>	
@@ -173,7 +173,7 @@ $dvb_adapter = file_exists( "/dev/dvb/adapter0/frontend0") ? "yes" : "no";
             <tr>
 				<td>DVB Adapter:</td>
 				<?if ($dvb_adapter=="yes"):?>
-					<td style="color:green">Detected</td>
+					<td style="color:green"><b>Detected</b></td>
 				<?else:?>
 					<td style="color:green"><b>Not Detected</b></td>
                 <?endif;?>
