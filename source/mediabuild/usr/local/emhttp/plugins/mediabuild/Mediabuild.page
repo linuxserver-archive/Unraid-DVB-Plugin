@@ -3,23 +3,22 @@ Icon="mediabuild.png"
 Title="DVB Build"
 ---
 <?
-/* CHBMB / Squid*/
+/* CHBMB/Squid */
 
 #Unraid Version
 $version = parse_ini_file("/etc/unraid-version");
 $unRaidVersion = $version['version'];
 
 #DVB Version
-
-$dvb = parse_ini_file("/etc/unraid-media");
+$dvb = (is_file("/etc/unraid-media")) ? parse_ini_file("/etc/unraid-media") : array();
 $dvbbase = $dvb['base'];
 $dvbdriver = $dvb['driver'];
-
-#No Longer Needed - Variables split out above
-#$driverVersion = @file_get_contents("/etc/unraid-media");
-
 $reboot = (is_file("/tmp/mediabuild/reboot")) ? "true" : "false";
 
+#Mediatree Kernel
+$kernel = trim(shell_exec( "uname -r" ));
+$mediatree = file_exists( "/lib/modules/$kernel/kernel/drivers/media" ) ? "yes" : "no";
+$dvb_adapter = file_exists( "/dev/dvb/adapter0/frontend0") ? "yes" : "no";
 ?>
 
 
@@ -129,18 +128,9 @@ Description:  <span id='description'></span>
 <span id='reboot' hidden><font size='4' color='red'>Installation Complete, you must reboot your server</font></span>
 </FORM>
 
-<!-- This part was written by Wojciech Walaszek for the tvheadend plugin and 
-modified by Saarg to only check media tree availability 
-and then integrated into the DVB plugin-->
+<!-- Parts of the below were written by Wojciech Walaszek for the tvheadend plugin-->
 
-<?PHP
-$kernel = trim(shell_exec( "uname -r" ));
-$mediatree = file_exists( "/lib/modules/$kernel/kernel/drivers/media" ) ? "yes" : "no";
-$dvb_adapter = file_exists( "/dev/dvb/adapter0/frontend0") ? "yes" : "no";
-?>
-
-
-<div style="width: 49%; float:left">
+<div style="width: 100%; float:left">
 	<div id="title">
 		<span class="left">Currently Installed:	</span>
 	</div>
@@ -178,5 +168,6 @@ $dvb_adapter = file_exists( "/dev/dvb/adapter0/frontend0") ? "yes" : "no";
 					<td style="color:green"><b>Not Detected</b></td>
                 <?endif;?>
 			</tr>
+			
         </table>
 </div>
