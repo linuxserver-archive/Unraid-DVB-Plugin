@@ -23,7 +23,7 @@ case 'show_description':
 
   $sources = json_decode(file_get_contents($mediaPaths['sources']),true);
 
-  echo "<font size='2'>".$sources[$build]['imageDescription']."</font>";;
+  echo "<font size='2' color='red'>".$sources[$build]['imageDescription']."</font>";;
   break;
 
 #Sets Text to be displayed in Dropdown Menu
@@ -34,7 +34,7 @@ case 'build_buttons':
   $types['stock']    = "unRaid";
 
 
-  $downloadURL = "http://files.linuxserver.io/unraid-dvb/";
+  $downloadURL = "http://files.linuxserver.io/mediabuild/";
   $tempFile = $mediaPaths['tempFiles']."/temp";
   $description = $mediaPaths['tempFiles']."/description";
 
@@ -85,10 +85,9 @@ case 'build_buttons':
             download_url($mediaTypes['imageURL']."/unraid-media",$description);
  
             if ( is_file($description) ) {
-              $mediaTypes['imageDescription'] = $tempVar = parse_ini_file($description); 
-			  $mediaTypes['imageDescription'] = "This will install the ".$tempVar['base']." DVB build with V".$tempVar['driver']. " drivers";
+              $mediaTypes['imageDescription'] = file_get_contents($description);
             } else {
-              $mediaTypes['imageDescription'] = "This will install stock unRAID";
+              $mediaTypes['imageDescription'] = "";
             }
           
             @unlink($description);
