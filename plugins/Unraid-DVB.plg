@@ -1,9 +1,9 @@
 <?xml version='1.0' standalone='yes'?>
 <!DOCTYPE PLUGIN [
-<!ENTITY name      "unraid-dvb">
+<!ENTITY name      "Unraid-DVB">
 <!ENTITY author    "CHBMB/Squid">
-<!ENTITY version   "2016.03.21">
-<!ENTITY md5       "95c90745478a9783e7f36dbbc270d171">
+<!ENTITY version   "2016.03.21a">
+<!ENTITY md5       "19f558b25fbe9fd582e54f3585622142">
 <!ENTITY launch    "Settings/Unraid-DVB">
 <!ENTITY plugdir   "/usr/local/emhttp/plugins/&name;">
 <!ENTITY github    "CHBMB/Unraid-DVB-Plugin">

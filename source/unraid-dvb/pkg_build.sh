@@ -10,4 +10,5 @@ mkdir -p $tmpdir
 cp --parents -f $(find . -type f ! \( -iname "pkg_build.sh" -o -iname "sftp-config.json"  \) ) $tmpdir/
 cd $tmpdir
 makepkg -l y -c y ${archive}/${plugin}-${version}.txz
+md5sum ${archive}/${plugin}-${version}.txz > ${archive}/${plugin}-${version}.txz.md5
 rm -rf $tmpdir
