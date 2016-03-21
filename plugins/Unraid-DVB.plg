@@ -1,0 +1,89 @@
+<?xml version='1.0' standalone='yes'?>
+<!DOCTYPE PLUGIN [
+<!ENTITY name      "Unraid-DVB">
+<!ENTITY author    "CHBMB/Squid">
+<!ENTITY version   "2016.03.21">
+<!ENTITY md5       "b13c09d85e007a23b6183352b9144d9e">
+<!ENTITY launch    "Settings/Unraid-DVB">
+<!ENTITY plugdir   "/usr/local/emhttp/plugins/&name;">
+<!ENTITY github    "CHBMB/Unraid-DVB-Plugin">
+<!ENTITY pluginURL "https://raw.githubusercontent.com/&github;/master/plugins/&name;.plg">
+]>
+
+<PLUGIN name="&name;" author="&author;" version="&version;" launch="&launch;" pluginURL="&pluginURL;">
+
+<CHANGES>
+###2016-03-21
+
+- Initial public release
+
+###2015-02-14
+
+- Initial testing version
+
+</CHANGES>
+
+<!-- The 'pre-install' script. -->
+<FILE Run="/usr/bin/php">
+<INLINE>
+<![CDATA[
+<?
+  $version = parse_ini_file("/etc/unraid-version");
+  
+  if ( version_compare($version['version'],"6.1.0", "<") )
+  {
+    echo "********************************************************************\n";
+    echo "\n";
+    echo "Unraid DVB Plugin Requires unRaid version 6.1 or greater to run\n";
+    echo "\n";
+    echo "********************************************************************\n";
+    exit(1);
+  }
+?>
+]]>
+</INLINE>
+</FILE>
+
+<FILE Run="/bin/bash">
+<INLINE>
+# Remove old 'source' files
+rm -f $(ls /boot/config/plugins/&name;/&name;*.txz 2>/dev/null|grep -v '&version;')
+rm -rf /tmp/mediabuild
+</INLINE>
+</FILE>
+
+<!--
+The 'source' file.
+-->
+<FILE Name="/boot/config/plugins/&name;/&name;-&version;.txz" Run="upgradepkg --install-new">
+<URL>https://raw.github.com/&github;/master/archive/&name;-&version;.txz</URL>
+<MD5>&md5;</MD5>
+</FILE>
+
+<!--
+The 'post-install' script
+-->
+<FILE Run="/bin/bash">
+<INLINE>
+echo ""
+echo "----------------------------------------------------"
+echo " &name; has been installed."
+echo " CHBMB/Squid"
+echo " Version: &version;"
+echo "----------------------------------------------------"
+echo ""
+</INLINE>
+</FILE>
+
+<!--
+The 'remove' script.
+-->
+<FILE Run="/bin/bash" Method="remove">
+<INLINE>
+removepkg &name;-&version;
+rm -rf &plugdir;
+rm -rf /boot/config/plugins/&name;
+rm -rf /tmp/mediabuild
+</INLINE>
+</FILE> 
+</PLUGIN>
