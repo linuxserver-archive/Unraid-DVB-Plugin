@@ -1,6 +1,6 @@
 Menu="Utilities"
 Icon="mediabuild.png"
-Title="DVB Build"
+Title="Available DVB Builds"
 ---
 <?
 /* CHBMB/Squid */
@@ -23,6 +23,7 @@ $dvb_adapter = file_exists( "/dev/dvb/adapter0/frontend0") ? "yes" : "no";
 
 
 <script>
+
 var URL = "/plugins/mediabuild/include/exec.php";
 
 function showDescription0(build)
@@ -96,7 +97,7 @@ $(function()
   }
 
   swal({
-    title: "Checking for available DVB builds",
+    title: "Checking for available media builds",
     text:  "This will only take a minute",
     showConfirmButton: false,
     showCancelButton: false
@@ -115,8 +116,6 @@ $(function()
 
 </script>
 
-<b>Available DVB Builds:</b>
-
 <span id='buttons'></span>
 <input type='button' id='install' disabled value='Download & Install' onclick='installBuild();'></input>
 <br><br>
@@ -132,7 +131,7 @@ Description:  <span id='description'></span>
 
 <div style="width: 100%; float:left">
 	<div id="title">
-		<span class="left">Currently Installed:	</span>
+		<span class="left">Currently Installed Build:	</span>
 	</div>
     	<table class="settings">
 			

@@ -13,9 +13,13 @@
 <PLUGIN name="&name;" author="&author;" version="&version;" launch="&launch;" pluginURL="&pluginURL;">
 
 <CHANGES>
+###2016-03-21
+
+- Initial public release
+
 ###2015-02-14
 
-- Had to create a plug as too pissed off continually reinstalling during tests
+- Initial testing version
 
 </CHANGES>
 
