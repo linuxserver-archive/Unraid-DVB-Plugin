@@ -1,6 +1,6 @@
 Menu="Utilities"
 Icon="mediabuild.png"
-Title="unRAID DVB"
+Title="Available DVB Builds"
 ---
 <?
 /* CHBMB/Squid */
@@ -24,7 +24,7 @@ $dvb_adapter = file_exists( "/dev/dvb/adapter0/frontend0") ? "yes" : "no";
 
 <script>
 
-var URL = "/plugins/mediabuild/include/exec.php";
+var URL = "/plugins/UnraidDVB/include/exec.php";
 
 function showDescription0(build)
 {
@@ -73,7 +73,7 @@ function installBuild()
   },
   function()
   {
-    openBox("/plugins/mediabuild/include/install.sh&arg1="+selected,"Installing "+selectedText,500,500);
+    openBox("/plugins/UnraidDVB/include/install.sh&arg1="+selected,"Installing "+selectedText,500,500);
     setInterval(function() {
       checkReboot();
     }, 1000);
