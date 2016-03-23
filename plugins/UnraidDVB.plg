@@ -38,11 +38,11 @@
 <?
   $version = parse_ini_file("/etc/unraid-version");
   
-  if ( version_compare($version['version'],"6.1.0", "<") )
+  if ( version_compare($version['version'],"6.2.0", "<") )
   {
     echo "********************************************************************\n";
     echo "\n";
-    echo "Unraid DVB Plugin Requires unRaid version 6.1 or greater to run\n";
+    echo "Unraid DVB Plugin Requires unRaid version 6.2 or greater to run\n";
     echo "\n";
     echo "********************************************************************\n";
     exit(1);
