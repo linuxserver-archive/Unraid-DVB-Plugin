@@ -38,7 +38,7 @@
 <?
   $version = parse_ini_file("/etc/unraid-version");
   
-  if ( version_compare($version['version'],"6.2.0", "<") )
+  if ( version_compare($version['version'],"6.2.0-beta18", "<") )
   {
     echo "********************************************************************\n";
     echo "\n";
