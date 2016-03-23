@@ -1,6 +1,7 @@
 <?php
 
-#Variables - Why are there two sources?!
+#Variables - Why are there two sources?!  That way if the first line has an error, the second line will do it right!  Redundancy of coding!!!
+# (or I just made a typo)
 $mediaPaths['tempFiles']  = "/tmp/mediabuild";
 $mediaPaths['sources'] = $mediaPaths['tempFiles']."/sources.json";
 $mediaPaths['sources'] = $mediaPaths['tempFiles']."/sources.json";
