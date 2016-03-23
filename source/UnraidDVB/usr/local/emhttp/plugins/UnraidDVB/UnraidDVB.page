@@ -1,9 +1,9 @@
 Menu="Utilities"
-Icon="mediabuild.png"
-Title="Available DVB Builds"
+Icon="UnraidDVB.png"
+Title="DVB Builds:"
 ---
 <?
-/* CHBMB/Squid */
+/* CHBMB & Squid */
 
 #Unraid Version
 $version = parse_ini_file("/etc/unraid-version");
@@ -127,11 +127,11 @@ Description:  <span id='description'></span>
 <span id='reboot' hidden><font size='4' color='red'>Installation Complete, you must reboot your server</font></span>
 </FORM>
 
-<!-- Parts of the below were written by Wojciech Walaszek for the tvheadend plugin-->
 
-<div style="width: 100%; float:left">
+
+<div style="width: 50%; float:left">
 	<div id="title">
-		<span class="left">Currently Installed Build:	</span>
+		<span class="left">Currently Installed Build:</span>
 	</div>
     	<table class="settings">
 			
@@ -149,7 +149,7 @@ Description:  <span id='description'></span>
 				<td>Driver Version:</td>
 				<td style="color:green"><b><?=$dvbdriver?></b></td>
 			</tr>
-			
+	<!-- The parts between these comment lines were written by Wojciech Walaszek for the tvheadend plugin-->		
 			<tr>
 				<td>DVB Kernel:</td>
 				<?if ($mediatree=="yes"):?>
@@ -166,6 +166,35 @@ Description:  <span id='description'></span>
 				<?else:?>
 					<td style="color:green"><b>Not Detected</b></td>
                 <?endif;?>
+			</tr>
+	<!-- The parts between these comment lines were written by Wojciech Walaszek for the tvheadend plugin-->			
+        </table>
+</div>
+
+<div style="width: 50%; float:right">
+	<div id="title">
+		<span class="left">Useful Links & Info:</span>
+	</div>
+    	<table>
+			
+			<tr>
+				<td><a href="" style="color:green"target="_blank"><b>unRAID DVB Support Thread</b></a></td>
+			</tr>
+			
+			<tr>
+				<td><a href="http://lime-technology.com/forum/index.php?topic=41110.0" style="color:green" target="_blank"> <b>MythTV Docker by Sparklyballs</b></a></td>
+			</tr>
+						
+			<tr>
+				<td><a href="http://lime-technology.com/forum/index.php?topic=46575.0" style="color:green" target="_blank"><b>TVHeadEnd Docker by Binhex</b></a></td>
+			</tr>
+			
+			<tr>
+				<td><a href="http://lime-technology.com/forum/index.php?topic=41110.0" style="color:green" target="_blank"><b>TVHeadEnd Docker by Saarg</b></a></td>
+			</tr>
+			
+			<tr>
+				<td><a href="http://lime-technology.com/forum/index.php?topic=40704.0" style="color:green" target="_blank"><b>TVHeadEnd Plugin by Mettbrot</b></a></td>
 			</tr>
 			
         </table>

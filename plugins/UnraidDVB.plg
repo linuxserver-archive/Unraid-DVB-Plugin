@@ -3,7 +3,7 @@
 <!ENTITY name      "UnraidDVB">
 <!ENTITY author    "CHBMB/Squid">
 <!ENTITY version   "2016.03.21">
-<!ENTITY md5       "4f941492261980886f7a3ff1ceaf476a">
+<!ENTITY md5       "2839ce6416fd7fdd47af6cadb3e497a1">
 <!ENTITY launch    "Settings/UnraidDVB">
 <!ENTITY plugdir   "/usr/local/emhttp/plugins/&name;">
 <!ENTITY github    "CHBMB/Unraid-DVB-Plugin">
@@ -13,13 +13,21 @@
 <PLUGIN name="&name;" author="&author;" version="&version;" launch="&launch;" pluginURL="&pluginURL;">
 
 <CHANGES>
-###2016-03-21
+###2016-03-23
 
-- Initial public release
+- Updates to page and useful links added.
 
-###2015-02-14
+###2016-03-20
 
-- Initial testing version
+- V6.2 Beta 18 & Beta 19 release of Digital Devices Experimental.
+
+###2016-03-19
+
+- Internal release for the V6.2 Beta 19 release. OpenElec & TBS Builds.
+
+###2016-03-12
+
+- Internal release for the V6.2 Beta 18 release.  OpenElec & TBS Builds.
 
 </CHANGES>
 
@@ -65,6 +73,11 @@ The 'post-install' script
 -->
 <FILE Run="/bin/bash">
 <INLINE>
+# Written by Saarg for the MediaTreeCheck Plugin
+if [ -d /dev/dvb ]; then
+  chown -R nobody:users /dev/dvb
+fi
+
 echo ""
 echo "----------------------------------------------------"
 echo " &name; has been installed."

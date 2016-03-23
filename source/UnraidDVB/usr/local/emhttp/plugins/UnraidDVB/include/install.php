@@ -1,5 +1,4 @@
 <?
-# this file needs to be chmod +x
 function download($URL, $name, &$error) {
   if ($file = popen("wget --progress=dot -O $name $URL 2>&1", 'r')) {
     echo "Downloading: $name ...\r";

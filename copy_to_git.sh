@@ -1,7 +1,7 @@
 #!/bin/bash
 
-mkdir -p "/tmp/GitHub/mediabuild/source/mediabuild/usr/local/emhttp/plugins/community.applications/"
+mkdir -p "//mnt/cache/.appdata/github/Unraid-DVB-Plugin/source/UnraidDVB/usr/local/emhttp/plugins/UnraidDVB/"
 
-cp /usr/local/emhttp/plugins/mediabuild/* /tmp/GitHub/mediabuild/source/mediabuild/usr/local/emhttp/plugins/mediabuild -R -v
+cp /usr/local/emhttp/plugins/UnraidDVB/* /mnt/cache/.appdata/github/Unraid-DVB-Plugin/source/UnraidDVB/usr/local/emhttp/plugins/UnraidDVB/ -R -v
 
 

@@ -1,9 +1,7 @@
 <?php
 
-#Variables - Why are there two sources?!  That way if the first line has an error, the second line will do it right!  Redundancy of coding!!!
-# (or I just made a typo)
+#Variables 
 $mediaPaths['tempFiles']  = "/tmp/mediabuild";
-$mediaPaths['sources'] = $mediaPaths['tempFiles']."/sources.json";
 $mediaPaths['sources'] = $mediaPaths['tempFiles']."/sources.json";
 $mediaPaths['reboot'] = $mediaPaths['tempFiles']."/reboot";
 
@@ -87,7 +85,7 @@ case 'build_buttons':
  
             if ( is_file($description) ) {
               $mediaTypes['imageDescription'] = $tempVar = parse_ini_file($description); 
-			  $mediaTypes['imageDescription'] = "This will install the ".$tempVar['base']." DVB build with V".$tempVar['driver']. " drivers";
+			  $mediaTypes['imageDescription'] = "This will install the ".$tempVar['base']." unRAID DVB build with V".$tempVar['driver']. " drivers";
             } else {
               $mediaTypes['imageDescription'] = "This will install stock unRAID";
             }
