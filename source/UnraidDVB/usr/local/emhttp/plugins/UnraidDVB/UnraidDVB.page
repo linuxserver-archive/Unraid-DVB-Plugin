@@ -1,6 +1,6 @@
 Menu="Utilities"
 Icon="UnraidDVB.png"
-Title="DVB Builds:"
+Title="unRAID DVB"
 ---
 <?
 /* CHBMB & Squid */
@@ -131,7 +131,7 @@ Description:  <span id='description'></span>
 
 <div style="width: 50%; float:left">
 	<div id="title">
-		<span class="left">Currently Installed Build:</span>
+		<span class="left">Currently Installed Build</span>
 	</div>
     	<table class="settings">
 			
@@ -173,7 +173,7 @@ Description:  <span id='description'></span>
 
 <div style="width: 50%; float:right">
 	<div id="title">
-		<span class="left">Useful Links & Info:</span>
+		<span class="left">Useful Links & Info</span>
 	</div>
     	<table>
 			
