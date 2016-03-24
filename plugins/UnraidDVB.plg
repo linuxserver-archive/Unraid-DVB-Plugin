@@ -83,8 +83,8 @@ if grep -q "bzroot-gui" "/boot/syslinux/syslinux.cfg"; then
 	echo "6.2+ version installed"
 else
 	echo "6.1 series version installed";
-	mv -i /usr/local/emhttp/plugins/UnraidDVB/include/exec61.php /usr/local/emhttp/plugins/UnraidDVB/include/exec.php; 
-	mv -i /usr/local/emhttp/plugins/UnraidDVB/include/install61.php /usr/local/emhttp/plugins/UnraidDVB/include/install.php;
+	mv -f /usr/local/emhttp/plugins/UnraidDVB/include/exec61.php /usr/local/emhttp/plugins/UnraidDVB/include/exec.php; 
+	mv -f /usr/local/emhttp/plugins/UnraidDVB/include/install61.php /usr/local/emhttp/plugins/UnraidDVB/include/install.php;
 fi
 
 # Written by Saarg for the MediaTreeCheck Plugin
