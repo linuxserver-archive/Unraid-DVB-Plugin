@@ -38,11 +38,11 @@
 <?
   $version = parse_ini_file("/etc/unraid-version");
   
-  if ( version_compare($version['version'],"6.2.0-beta18", "<") )
+  if ( version_compare($version['version'],"6.1", "<") )
   {
     echo "********************************************************************\n";
     echo "\n";
-    echo "Unraid DVB Plugin Requires unRaid version 6.2 or greater to run\n";
+    echo "Unraid DVB Plugin Requires unRaid version 6.1 or greater to run\n";
     echo "\n";
     echo "********************************************************************\n";
     exit(1);
@@ -73,6 +73,16 @@ The 'post-install' script
 -->
 <FILE Run="/bin/bash">
 <INLINE>
+
+#if [[ -f /boot/bzroot-gui ]]; then
+if grep -q "bzroot-gui" "/boot/syslinux/syslinux.cfg"; then
+	echo "6.2 installed"
+else
+	echo "6.1 or greater installed"
+	mv -i /usr/local/emhttp/plugins/UnraidDVB/include/exec61.php /usr/local/emhttp/plugins/UnraidDVB/include/exec.php
+	mv -i /usr/local/emhttp/plugins/UnraidDVB/include/install61.php /usr/local/emhttp/plugins/UnraidDVB/include/install.php
+fi
+
 # Written by Saarg for the MediaTreeCheck Plugin
 if [ -d /dev/dvb ]; then
   chown -R nobody:users /dev/dvb
