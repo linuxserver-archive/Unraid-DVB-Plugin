@@ -2,8 +2,8 @@
 <!DOCTYPE PLUGIN [
 <!ENTITY name      "UnraidDVB">
 <!ENTITY author    "CHBMB/Squid">
-<!ENTITY version   "2016.03.23">
-<!ENTITY md5       "b9a35d151e051d1e4b3c3e664fae47d4">
+<!ENTITY version   "2016.03.24">
+<!ENTITY md5       "a8366937b7b8fe4b052f110c17440d30">
 <!ENTITY launch    "Settings/UnraidDVB">
 <!ENTITY plugdir   "/usr/local/emhttp/plugins/&name;">
 <!ENTITY github    "CHBMB/Unraid-DVB-Plugin">
@@ -13,6 +13,10 @@
 <PLUGIN name="&name;" author="&author;" version="&version;" launch="&launch;" pluginURL="&pluginURL;">
 
 <CHANGES>
+###2016-03-24
+
+- Detect if Unraid V6.2 or later and install appropriate version.
+
 ###2016-03-23
 
 - Updates to page and useful links added.
