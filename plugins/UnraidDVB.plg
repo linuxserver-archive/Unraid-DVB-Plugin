@@ -80,11 +80,11 @@ The 'post-install' script
 
 #if [[ -f /boot/bzroot-gui ]]; then
 if grep -q "bzroot-gui" "/boot/syslinux/syslinux.cfg"; then
-	echo "6.2 installed"
+	echo "6.2+ version installed"
 else
-	echo "6.1 or greater installed"
-	mv -i /usr/local/emhttp/plugins/UnraidDVB/include/exec61.php /usr/local/emhttp/plugins/UnraidDVB/include/exec.php
-	mv -i /usr/local/emhttp/plugins/UnraidDVB/include/install61.php /usr/local/emhttp/plugins/UnraidDVB/include/install.php
+	echo "6.1 series version installed"; then
+	mv -i /usr/local/emhttp/plugins/UnraidDVB/include/exec61.php /usr/local/emhttp/plugins/UnraidDVB/include/exec.php; then
+	mv -i /usr/local/emhttp/plugins/UnraidDVB/include/install61.php /usr/local/emhttp/plugins/UnraidDVB/include/install.php;
 fi
 
 # Written by Saarg for the MediaTreeCheck Plugin
