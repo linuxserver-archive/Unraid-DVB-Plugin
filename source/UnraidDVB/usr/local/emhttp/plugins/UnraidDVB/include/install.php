@@ -57,17 +57,20 @@ echo "Base URL: $downloadURL\n\n";
 
 download($downloadURL."bzimage","/tmp/mediabuild/bzimage",$error);
 download($downloadURL."bzroot","/tmp/mediabuild/bzroot",$error);
+download($downloadURL."bzroot-gui","/tmp/mediabuild/bzroot-gui",$error);
 download($downloadURL."bzimage.md5","/tmp/mediabuild/bzimage.md5",$error);
 download($downloadURL."bzroot.md5","/tmp/mediabuild/bzroot.md5",$error);
+download($downloadURL."bzroot-gui.md5","/tmp/mediabuild/bzroot-gui.md5",$error);
 
 echo "\n";
 
 $bzimageMD5 = explode(" ",file_get_contents("/tmp/mediabuild/bzimage.md5"));
 $bzrootMD5 = explode(" ",file_get_contents("/tmp/mediabuild/bzroot.md5"));
+$bzroot_guiMD5 = explode(" ",file_get_contents("/tmp/mediabuild/bzroot-gui.md5"));
 
 echo "Checking MD5's: ";
 
-if ( md5_file("/tmp/mediabuild/bzimage") != $bzimageMD5[0] || md5_file("/tmp/mediabuild/bzroot") != $bzrootMD5[0] ) {
+if ( md5_file("/tmp/mediabuild/bzimage") != $bzimageMD5[0] || md5_file("/tmp/mediabuild/bzroot") != $bzrootMD5[0]  || md5_file("/tmp/mediabuild/bzroot-gui") != $bzroot_guiMD5[0] ) {
   echo "failed!\n\n";
   exit(1);
 } else {
@@ -75,6 +78,7 @@ if ( md5_file("/tmp/mediabuild/bzimage") != $bzimageMD5[0] || md5_file("/tmp/med
   
   exec("cp /tmp/mediabuild/bzimage /boot/bzimage");
   exec("cp /tmp/mediabuild/bzroot /boot/bzroot");
+  exec("cp /tmp/mediabuild/bzroot-gui /boot/bzroot-gui");
   echo "You must reboot your server\n\n";
   file_put_contents("/tmp/mediabuild/reboot","reboot");
   

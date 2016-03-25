@@ -1,0 +1,201 @@
+Menu="Utilities"
+Icon="UnraidDVB.png"
+Title="unRAID DVB"
+---
+<?
+/* CHBMB & Squid */
+
+#Unraid Version
+$version = parse_ini_file("/etc/unraid-version");
+$unRaidVersion = $version['version'];
+
+#DVB Version
+$dvb = (is_file("/etc/unraid-media")) ? parse_ini_file("/etc/unraid-media") : array();
+$dvbbase = $dvb['base'];
+$dvbdriver = $dvb['driver'];
+$reboot = (is_file("/tmp/mediabuild/reboot")) ? "true" : "false";
+
+#Mediatree Kernel
+$kernel = trim(shell_exec( "uname -r" ));
+$mediatree = file_exists( "/lib/modules/$kernel/kernel/drivers/media" ) ? "yes" : "no";
+$dvb_adapter = file_exists( "/dev/dvb/adapter0/frontend0") ? "yes" : "no";
+?>
+
+
+<script>
+
+var URL = "/plugins/UnraidDVB/include/exec.php";
+
+function showDescription0(build)
+{
+  document.getElementById("Media").selectedIndex = 0;
+
+  showDescription(build);
+}
+
+function showDescription1(build)
+{
+  document.getElementById("unRaid").selectedIndex = 0;
+
+  showDescription(build);
+}
+
+function showDescription(build)
+{
+  $("#install").prop("disabled",false);
+
+  $.post(URL,{action:'show_description',build:build},function(data)
+  {
+    if (data)
+    {
+      $("#description").html(data);
+    }
+  });
+}
+
+function installBuild()
+{
+  var element = document.getElementById("Media");
+  var selected = element.options[element.selectedIndex].value;
+  var selectedText = element.options[element.selectedIndex].text;
+  
+  if ( selected == "default" ) {
+    element = document.getElementById("unRaid");
+    selected = element.options[element.selectedIndex].value;
+    selectedText = element.options[element.selectedIndex].text;
+  }
+  swal({
+    title: "Are you sure you want to install "+selectedText+"?",
+    type: "warning",
+    closeOnConfirm: true,
+    showLoaderOnConfirm: true,
+    showCancelButton: true
+  },
+  function()
+  {
+    openBox("/plugins/UnraidDVB/include/install.sh&arg1="+selected,"Installing "+selectedText,500,500);
+    setInterval(function() {
+      checkReboot();
+    }, 1000);
+  });
+}
+
+function checkReboot() {
+    $.post(URL,{action:'check_reboot'},function(data){
+      if (data){
+        $("#reboot").show();
+      }
+    });  }
+
+$(function()
+{
+  $("#install").hide();
+  
+  if ( "<?=$reboot?>" == "true" )
+  {
+    $("#reboot").show();
+  }
+
+  swal({
+    title: "Checking for available media builds",
+    text:  "This will only take a minute",
+    showConfirmButton: false,
+    showCancelButton: false
+  });
+  
+  $.post(URL,{action:'build_buttons'},function(data)
+  {
+    if (data)
+    {
+      swal.close();
+      $("#buttons").html(data);
+      $("#install").show();
+    }
+  });
+});
+
+</script>
+
+<span id='buttons'></span>
+<input type='button' id='install' disabled value='Download & Install' onclick='installBuild();'></input>
+<br><br>
+<input type='button' value='Cancel' onclick='done();'>
+
+Description:  <span id='description'></span>
+
+
+<span id='reboot' hidden><font size='4' color='red'>Installation Complete, you must reboot your server</font></span>
+</FORM>
+
+
+
+<div style="width: 50%; float:left">
+	<div id="title">
+		<span class="left">Currently Installed Build</span>
+	</div>
+    	<table class="settings">
+			
+			<tr>
+				<td>unRAID Version:</td>
+				<td style="color:green"><b><?=$unRaidVersion?></b></td>
+			</tr>
+			
+			<tr>
+				<td>DVB Version:</td>
+				<td style="color:green"><b><?=$dvbbase?></b></td>
+			</tr>
+			
+			<tr>
+				<td>Driver Version:</td>
+				<td style="color:green"><b><?=$dvbdriver?></b></td>
+			</tr>
+	<!-- The parts between these comment lines were written by Wojciech Walaszek for the tvheadend plugin-->		
+			<tr>
+				<td>DVB Kernel:</td>
+				<?if ($mediatree=="yes"):?>
+					<td style="color:green"><b>Detected</b></td>
+				<?else:?>
+					<td style="color:green"><b>Not Detected</b></td>
+                <?endif;?>	
+			</tr>
+			
+            <tr>
+				<td>DVB Adapter:</td>
+				<?if ($dvb_adapter=="yes"):?>
+					<td style="color:green"><b>Detected</b></td>
+				<?else:?>
+					<td style="color:green"><b>Not Detected</b></td>
+                <?endif;?>
+			</tr>
+	<!-- The parts between these comment lines were written by Wojciech Walaszek for the tvheadend plugin-->			
+        </table>
+</div>
+
+<div style="width: 50%; float:right">
+	<div id="title">
+		<span class="left">Useful Links & Info</span>
+	</div>
+    	<table>
+			
+			<tr>
+				<td><a href="" style="color:green"target="_blank"><b>unRAID DVB Support Thread</b></a></td>
+			</tr>
+			
+			<tr>
+				<td><a href="http://lime-technology.com/forum/index.php?topic=41110.0" style="color:green" target="_blank"> <b>MythTV Docker by Sparklyballs</b></a></td>
+			</tr>
+						
+			<tr>
+				<td><a href="http://lime-technology.com/forum/index.php?topic=46575.0" style="color:green" target="_blank"><b>TVHeadEnd Docker by Binhex</b></a></td>
+			</tr>
+			
+			<tr>
+				<td><a href="http://lime-technology.com/forum/index.php?topic=41110.0" style="color:green" target="_blank"><b>TVHeadEnd Docker by Saarg</b></a></td>
+			</tr>
+			
+			<tr>
+				<td><a href="http://lime-technology.com/forum/index.php?topic=40704.0" style="color:green" target="_blank"><b>TVHeadEnd Plugin by Mettbrot</b></a></td>
+			</tr>
+			
+        </table>
+</div>

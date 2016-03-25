@@ -1,10 +1,11 @@
 <?php
 
+#Variables 
 $mediaPaths['tempFiles']  = "/tmp/mediabuild";
-$mediaPaths['sources'] = $mediaPaths['tempFiles']."/sources.json";
 $mediaPaths['sources'] = $mediaPaths['tempFiles']."/sources.json";
 $mediaPaths['reboot'] = $mediaPaths['tempFiles']."/reboot";
 
+#If temp dir does not exist then create.
 if ( ! is_dir($mediaPaths['tempFiles']) ) {
   exec("mkdir -p ".$mediaPaths['tempFiles']);
 }
@@ -21,11 +22,12 @@ case 'show_description':
 
   $sources = json_decode(file_get_contents($mediaPaths['sources']),true);
 
-  echo "<font size='2' color='red'>".$sources[$build]['imageDescription']."</font>";;
+  echo "<font size='2'>".$sources[$build]['imageDescription']."</font>";;
   break;
-  
+
+#Sets Text to be displayed in Dropdown Menu
 case 'build_buttons':
-  $types['ddexp']    = "DDExp";
+  $types['ddexp']    = "Digital Devices Experimental";
   $types['openelec'] = "OpenElec";
   $types['tbs']      = "TBS";
   $types['stock']    = "unRaid";
@@ -82,9 +84,10 @@ case 'build_buttons':
             download_url($mediaTypes['imageURL']."/unraid-media",$description);
  
             if ( is_file($description) ) {
-              $mediaTypes['imageDescription'] = file_get_contents($description);
+              $mediaTypes['imageDescription'] = $tempVar = parse_ini_file($description); 
+			  $mediaTypes['imageDescription'] = "This will install the ".$tempVar['base']." unRAID DVB build with V".$tempVar['driver']. " drivers";
             } else {
-              $mediaTypes['imageDescription'] = "";
+              $mediaTypes['imageDescription'] = "This will install stock unRAID";
             }
           
             @unlink($description);
@@ -141,9 +144,9 @@ case 'build_buttons':
   {
     if ( $button['name'] == "unRaid" )
     {
-      $o .= "stock unRaid Builds: <select id='unRaid' onchange='showDescription0(value);'>";
+      $o .= "Stock unRaid Builds: <select id='unRaid' onchange='showDescription0(value);'>";
     } else {
-      $o .= "Media Builds: <select id='Media' onchange='showDescription1(value);'>";
+      $o .= "DVB unRAID Builds: <select id='Media' onchange='showDescription1(value);'>";
     }
 
     $o .= "<option value='default' disabled selected>Select an image to install</option>";

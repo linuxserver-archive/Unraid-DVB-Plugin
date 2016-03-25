@@ -1,21 +1,37 @@
 <?xml version='1.0' standalone='yes'?>
 <!DOCTYPE PLUGIN [
-<!ENTITY name      "mediabuild">
-<!ENTITY author    "CHBMB">
-<!ENTITY version   "2016.02.14d">
-<!ENTITY md5       "b13c09d85e007a23b6183352b9144d9e">
-<!ENTITY launch    "Settings/Mediabuild">
+<!ENTITY name      "UnraidDVB">
+<!ENTITY author    "CHBMB/Squid">
+<!ENTITY version   "2016.03.24">
+<!ENTITY md5       "a8366937b7b8fe4b052f110c17440d30">
+<!ENTITY launch    "Settings/UnraidDVB">
 <!ENTITY plugdir   "/usr/local/emhttp/plugins/&name;">
-<!ENTITY github    "linuxserver/mediabuild">
+<!ENTITY github    "linuxserver/Unraid-DVB-Plugin">
 <!ENTITY pluginURL "https://raw.githubusercontent.com/&github;/master/plugins/&name;.plg">
 ]>
 
 <PLUGIN name="&name;" author="&author;" version="&version;" launch="&launch;" pluginURL="&pluginURL;">
 
 <CHANGES>
-###2015-02-14
+###2016-03-24
 
-- Had to create a plug as too pissed off continually reinstalling during tests
+- Detect if Unraid V6.2 or later and install appropriate version.
+
+###2016-03-23
+
+- Updates to page and useful links added.
+
+###2016-03-20
+
+- V6.2 Beta 18 and Beta 19 release of Digital Devices Experimental.
+
+###2016-03-19
+
+- Internal release for the V6.2 Beta 19 release. OpenElec and TBS Builds.
+
+###2016-03-12
+
+- Internal release for the V6.2 Beta 18 release.  OpenElec and TBS Builds.
 
 </CHANGES>
 
@@ -26,11 +42,11 @@
 <?
   $version = parse_ini_file("/etc/unraid-version");
   
-  if ( version_compare($version['version'],"6.1.0", "<") )
+  if ( version_compare($version['version'],"6.1", "<") )
   {
     echo "********************************************************************\n";
     echo "\n";
-    echo "Media Build Plugin Requires unRaid version 6.1 or greater to run\n";
+    echo "Unraid DVB Plugin Requires unRaid version 6.1 or greater to run\n";
     echo "\n";
     echo "********************************************************************\n";
     exit(1);
@@ -61,10 +77,25 @@ The 'post-install' script
 -->
 <FILE Run="/bin/bash">
 <INLINE>
+
+#if [[ -f /boot/bzroot-gui ]]; then
+if grep -q "bzroot-gui" "/boot/syslinux/syslinux.cfg"; then
+	echo "6.2+ version installed"
+else
+	echo "6.1 series version installed";
+	mv -f /usr/local/emhttp/plugins/UnraidDVB/include/exec61.php /usr/local/emhttp/plugins/UnraidDVB/include/exec.php; 
+	mv -f /usr/local/emhttp/plugins/UnraidDVB/include/install61.php /usr/local/emhttp/plugins/UnraidDVB/include/install.php;
+fi
+
+# Written by Saarg for the MediaTreeCheck Plugin
+if [ -d /dev/dvb ]; then
+  chown -R nobody:users /dev/dvb
+fi
+
 echo ""
 echo "----------------------------------------------------"
 echo " &name; has been installed."
-echo " Copyright 2016, CHBMB"
+echo " CHBMB/Squid"
 echo " Version: &version;"
 echo "----------------------------------------------------"
 echo ""
