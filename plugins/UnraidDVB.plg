@@ -2,8 +2,8 @@
 <!DOCTYPE PLUGIN [
 <!ENTITY name      "UnraidDVB">
 <!ENTITY author    "CHBMB/Squid">
-<!ENTITY version   "2016.03.27">
-<!ENTITY md5       "d7544793bccea7472151fea488cb9675">
+<!ENTITY version   "2016.03.27a">
+<!ENTITY md5       "abc0c1849550ed2d50b95e5447f21465">
 <!ENTITY launch    "Settings/UnraidDVB">
 <!ENTITY plugdir   "/usr/local/emhttp/plugins/&name;">
 <!ENTITY github    "linuxserver/Unraid-DVB-Plugin">
@@ -13,6 +13,10 @@
 <PLUGIN name="&name;" author="&author;" version="&version;" launch="&launch;" pluginURL="&pluginURL;">
 
 <CHANGES>
+###2016-03-27a
+
+- Some display tweaks and ability to downgrade.
+
 ###2016-03-27
 
 - unRAID V6.2 Beta 20 builds done.
