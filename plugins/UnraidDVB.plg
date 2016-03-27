@@ -3,7 +3,7 @@
 <!ENTITY name      "UnraidDVB">
 <!ENTITY author    "CHBMB/Squid">
 <!ENTITY version   "2016.03.24">
-<!ENTITY md5       "a8366937b7b8fe4b052f110c17440d30">
+<!ENTITY md5       "d7544793bccea7472151fea488cb9675">
 <!ENTITY launch    "Settings/UnraidDVB">
 <!ENTITY plugdir   "/usr/local/emhttp/plugins/&name;">
 <!ENTITY github    "linuxserver/Unraid-DVB-Plugin">
@@ -13,6 +13,10 @@
 <PLUGIN name="&name;" author="&author;" version="&version;" launch="&launch;" pluginURL="&pluginURL;">
 
 <CHANGES>
+###2016-03-27
+
+- unRAID V6.2 Beta 20 builds done.
+
 ###2016-03-24
 
 - Detect if Unraid V6.2 or later and install appropriate version.
