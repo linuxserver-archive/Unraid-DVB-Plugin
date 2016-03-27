@@ -9,6 +9,13 @@ Title="unRAID DVB"
 $version = parse_ini_file("/etc/unraid-version");
 $unRaidVersion = $version['version'];
 
+$installedVersion = exec("/usr/local/emhttp/plugins/dynamix.plugin.manager/scripts/plugin version /var/log/plugins/UnraidDVB.plg");
+if ( is_file("/tmp/plugins/UnraidDVB.plg") ) {
+  $upgradeVersion = exec("/usr/local/emhttp/plugins/dynamix.plugin.manager/scripts/plugin version /tmp/plugins/UnraidDVB.plg");
+} else {
+  $upgradeVersion = "0";
+}
+
 #DVB Version
 $dvb = (is_file("/etc/unraid-media")) ? parse_ini_file("/etc/unraid-media") : array();
 $dvbbase = $dvb['base'];
@@ -89,6 +96,10 @@ function checkReboot() {
 
 $(function()
 {
+  if ( "<?=$installedVersion?>" < "<?=$upgradeVersion?>" ) {
+    $('#upgradeAvailable').show();
+  }
+
   $("#install").hide();
   
   if ( "<?=$reboot?>" == "true" )
@@ -115,6 +126,8 @@ $(function()
 });
 
 </script>
+
+<div id='upgradeAvailable' hidden><font color='red'>An update to UnraidDVB is Available</font></div>
 
 <span id='buttons'></span>
 <input type='button' id='install' disabled value='Download & Install' onclick='installBuild();'></input>
@@ -199,3 +212,6 @@ Description:  <span id='description'></span>
 			
         </table>
 </div>
+
+
+
