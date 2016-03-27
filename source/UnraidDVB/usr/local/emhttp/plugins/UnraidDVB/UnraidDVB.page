@@ -2,6 +2,9 @@ Menu="Utilities"
 Icon="UnraidDVB.png"
 Title="unRAID DVB"
 ---
+<a href="https://www.linuxserver.io/" target="_blank">
+<img src="https://www.linuxserver.io/wp-content/uploads/2015/06/linuxserver_small.png">
+</a> 
 <?
 /* CHBMB & Squid */
 
@@ -139,9 +142,6 @@ Description:  <span id='description'></span>
 
 <span id='reboot' hidden><font size='4' color='red'>Installation Complete, you must reboot your server</font></span>
 </FORM>
-
-
-
 <div style="width: 50%; float:left">
 	<div id="title">
 		<span class="left">Currently Installed Build</span>
@@ -173,7 +173,7 @@ Description:  <span id='description'></span>
 			</tr>
 			
             <tr>
-				<td>DVB Adapter:</td>
+				<td>DVB Adapter Drivers:</td>
 				<?if ($dvb_adapter=="yes"):?>
 					<td style="color:green"><b>Detected</b></td>
 				<?else:?>
@@ -191,7 +191,7 @@ Description:  <span id='description'></span>
     	<table>
 			
 			<tr>
-				<td><a href="" style="color:green"target="_blank"><b>unRAID DVB Support Thread</b></a></td>
+				<td><a href="http://lime-technology.com/forum/index.php?topic=47899.0" style="color:green"target="_blank"><b>unRAID DVB Support Thread</b></a></td>
 			</tr>
 			
 			<tr>
