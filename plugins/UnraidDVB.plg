@@ -88,7 +88,9 @@ The 'post-install' script
 
 #if [[ -f /boot/bzroot-gui ]]; then
 if grep -q "bzroot-gui" "/boot/syslinux/syslinux.cfg"; then
+	echo "V6.2 compatible"
 else
+	echo "Not yet V6.2 compatible, upgrade via LimeTech plugin to get access to V6.2 DVB Builds";
 	mv -f /usr/local/emhttp/plugins/UnraidDVB/include/exec61.php /usr/local/emhttp/plugins/UnraidDVB/include/exec.php; 
 	mv -f /usr/local/emhttp/plugins/UnraidDVB/include/install61.php /usr/local/emhttp/plugins/UnraidDVB/include/install.php;
 fi
