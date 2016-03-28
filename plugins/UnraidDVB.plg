@@ -2,7 +2,7 @@
 <!DOCTYPE PLUGIN [
 <!ENTITY name      "UnraidDVB">
 <!ENTITY author    "CHBMB/Squid">
-<!ENTITY version   "2016.03.27a">
+<!ENTITY version   "2016.03.28">
 <!ENTITY md5       "abc0c1849550ed2d50b95e5447f21465">
 <!ENTITY launch    "Settings/UnraidDVB">
 <!ENTITY plugdir   "/usr/local/emhttp/plugins/&name;">
@@ -13,6 +13,10 @@
 <PLUGIN name="&name;" author="&author;" version="&version;" launch="&launch;" pluginURL="&pluginURL;">
 
 <CHANGES>
+###2016-03-28
+
+- Updated V6.1.9 and V6.2 Beta 20 to include lirc_zilog module
+
 ###2016-03-27a
 
 - Some display tweaks and ability to downgrade.
