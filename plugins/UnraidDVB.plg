@@ -2,8 +2,8 @@
 <!DOCTYPE PLUGIN [
 <!ENTITY name      "UnraidDVB">
 <!ENTITY author    "CHBMB/Squid">
-<!ENTITY version   "2016.03.28a">
-<!ENTITY md5       "4ce561986b78df314b0b01686225ede4">
+<!ENTITY version   "2016.04.01">
+<!ENTITY md5       "3aa1cbbe29b035f030393abcbf982baf">
 <!ENTITY launch    "Settings/UnraidDVB">
 <!ENTITY plugdir   "/usr/local/emhttp/plugins/&name;">
 <!ENTITY github    "linuxserver/Unraid-DVB-Plugin">
@@ -13,6 +13,10 @@
 <PLUGIN name="&name;" author="&author;" version="&version;" launch="&launch;" pluginURL="&pluginURL;">
 
 <CHANGES>
+###2016-04-01
+
+- Display and text updates.  Don't worry, I'm not going to be like a 2nd Squid with CA updates three times a day...
+
 ###2016-03-28a
 
 - Updated TVHeadEnd Docker link, was pointing to the MythTV Docker thread.  Sorry Saarg ;)
