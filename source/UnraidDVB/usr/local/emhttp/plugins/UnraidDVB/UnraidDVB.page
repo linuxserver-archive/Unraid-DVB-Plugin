@@ -1,9 +1,9 @@
 Menu="Utilities"
 Icon="UnraidDVB.png"
-Title="unRAID DVB"
+Title="unRAID DVB Edition"
 ---
 <a href="https://www.linuxserver.io/" target="_blank">
-<img src="https://www.linuxserver.io/wp-content/uploads/2015/06/linuxserver_small.png">
+<img src="/plugins/UnraidDVB/images/linuxserver.png">
 </a> 
 <?
 /* CHBMB & Squid */
@@ -111,9 +111,11 @@ $(function()
   }
 
   swal({
-    title: "Checking for available media builds",
-    text:  "This will only take a minute",
-    showConfirmButton: false,
+    title: "unRAID DVB Edition",
+    text:  "Updating available builds",
+	imageUrl: "/plugins/UnraidDVB/images/linuxserver.png",
+	imageSize: "300x62",
+	showConfirmButton: false,
     showCancelButton: false
   });
   
@@ -191,7 +193,7 @@ Description:  <span id='description'></span>
     	<table>
 			
 			<tr>
-				<td><a href="http://lime-technology.com/forum/index.php?topic=47899.0" style="color:green"target="_blank"><b>unRAID DVB Support Thread</b></a></td>
+				<td><a href="http://lime-technology.com/forum/index.php?topic=47899.0" style="color:green"target="_blank"><b>unRAID DVB Edition Support Thread</b></a></td>
 			</tr>
 			
 			<tr>
