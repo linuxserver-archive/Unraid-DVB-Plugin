@@ -2,8 +2,8 @@
 <!DOCTYPE PLUGIN [
 <!ENTITY name      "UnraidDVB">
 <!ENTITY author    "CHBMB/Squid">
-<!ENTITY version   "2016.04.01">
-<!ENTITY md5       "3aa1cbbe29b035f030393abcbf982baf">
+<!ENTITY version   "2016.06.10">
+<!ENTITY md5       "248f870a4896c8a7c0419237660cb41a">
 <!ENTITY launch    "Settings/UnraidDVB">
 <!ENTITY plugdir   "/usr/local/emhttp/plugins/&name;">
 <!ENTITY github    "linuxserver/Unraid-DVB-Plugin">
@@ -13,6 +13,10 @@
 <PLUGIN name="&name;" author="&author;" version="&version;" launch="&launch;" pluginURL="&pluginURL;">
 
 <CHANGES>
+###2016-06-10
+
+- V6.2 Beta 22 OpenElec & TBS Builds uploaded
+
 ###2016-04-01
 
 - Display and text updates.  Don't worry, I'm not going to be like a 2nd Squid with CA updates three times a day...
