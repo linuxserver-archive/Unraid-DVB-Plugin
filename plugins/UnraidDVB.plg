@@ -2,8 +2,8 @@
 <!DOCTYPE PLUGIN [
 <!ENTITY name      "UnraidDVB">
 <!ENTITY author    "CHBMB/Squid">
-<!ENTITY version   "2016.06.10">
-<!ENTITY md5       "248f870a4896c8a7c0419237660cb41a">
+<!ENTITY version   "2016.06.12">
+<!ENTITY md5       "d6126e84a1f6f44ab2f206115071eedb">
 <!ENTITY launch    "Settings/UnraidDVB">
 <!ENTITY plugdir   "/usr/local/emhttp/plugins/&name;">
 <!ENTITY github    "linuxserver/Unraid-DVB-Plugin">
@@ -13,6 +13,10 @@
 <PLUGIN name="&name;" author="&author;" version="&version;" launch="&launch;" pluginURL="&pluginURL;">
 
 <CHANGES>
+###2016-06-12
+
+- V6.2 Beta 23 TBS and OpenElec Builds uploaded.  Digital Devices still a pain in my ass....
+
 ###2016-06-10
 
 - V6.2 Beta 22 TBS and OpenElec Builds uploaded.  Digital Devices being a pain, may be a while....
