@@ -31,6 +31,7 @@ case 'build_buttons':
   $types['openelec'] = "OpenElec";
   $types['tbs']      = "TBS";
   $types['stock']    = "unRaid";
+  $types['dd']    	 = "Digital Devices";
 
 
   $downloadURL = "http://files.linuxserver.io/unraid-dvb/";
