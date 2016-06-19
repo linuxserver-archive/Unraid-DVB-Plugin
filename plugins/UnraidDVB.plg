@@ -2,8 +2,8 @@
 <!DOCTYPE PLUGIN [
 <!ENTITY name      "UnraidDVB">
 <!ENTITY author    "CHBMB/Squid">
-<!ENTITY version   "2016.06.19">
-<!ENTITY md5       "653c55e2adef4c35149ee880aefab0cd">
+<!ENTITY version   "2016.06.19a">
+<!ENTITY md5       "9e7f012b018d925725802c5be91f2438">
 <!ENTITY launch    "Settings/UnraidDVB">
 <!ENTITY plugdir   "/usr/local/emhttp/plugins/&name;">
 <!ENTITY github    "linuxserver/Unraid-DVB-Plugin">
@@ -13,6 +13,10 @@
 <PLUGIN name="&name;" author="&author;" version="&version;" launch="&launch;" pluginURL="&pluginURL;">
 
 <CHANGES>
+###2016-06-19a
+
+- Digital Devices Github - Automatically install ddbridge.conf in /boot/config/plugins/UnraidDVB/ to enable end-user editing.
+
 ###2016-06-19
 
 - Support for TBS DVB-C drivers
@@ -113,6 +117,8 @@ The 'post-install' script
 -->
 <FILE Run="/bin/bash">
 <INLINE>
+##Install ddbridge.conf for Digital Devices build
+wget -nc -P /boot/config/plugins/UnraidDVB/ https://raw.githubusercontent.com/CHBMB/Unraid-DVB/master/files/ddbridge.conf
 
 #if [[ -f /boot/bzroot-gui ]]; then
 if grep -q "bzroot-gui" "/boot/syslinux/syslinux.cfg"; then
