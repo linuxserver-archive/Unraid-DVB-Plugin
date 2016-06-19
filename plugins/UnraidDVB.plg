@@ -113,6 +113,8 @@ The 'post-install' script
 -->
 <FILE Run="/bin/bash">
 <INLINE>
+##Install ddbridge.conf for Digital Devices build
+wget -nc -P /boot/config/plugins/UnraidDVB/ https://raw.githubusercontent.com/CHBMB/Unraid-DVB/master/files/ddbridge.conf
 
 #if [[ -f /boot/bzroot-gui ]]; then
 if grep -q "bzroot-gui" "/boot/syslinux/syslinux.cfg"; then
