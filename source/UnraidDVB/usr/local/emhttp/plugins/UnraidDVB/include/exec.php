@@ -28,12 +28,13 @@ case 'show_description':
 #Sets Text to be displayed in Dropdown Menu
 case 'build_buttons':
   $types['ddexp']    = "Digital Devices Experimental";
+  $types['dd']    	 = "Digital Devices Github";
   $types['openelec'] = "OpenElec";
   $types['tbs']      = "TBS";
+  $types['tbs-dvbc'] = "TBS DVB-C";
   $types['stock']    = "unRaid";
-  $types['dd']    	 = "Digital Devices";
-
-
+  
+  
   $downloadURL = "http://files.linuxserver.io/unraid-dvb/";
   $tempFile = $mediaPaths['tempFiles']."/temp";
   $description = $mediaPaths['tempFiles']."/description";
