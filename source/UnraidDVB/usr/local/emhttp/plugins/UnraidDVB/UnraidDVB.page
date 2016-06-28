@@ -2,9 +2,21 @@ Menu="Utilities"
 Icon="UnraidDVB.png"
 Title="unRAID DVB Edition"
 ---
-<a href="https://www.linuxserver.io/" target="_blank">
-<img src="/plugins/UnraidDVB/images/linuxserver.png">
-</a> 
+<div style="width: 50%; float:right">
+	<div id="section">
+		<a href="https://libreelec.tv/" target="_blank">
+			<img src="/plugins/UnraidDVB/images/libreelec.png">
+		</a> 
+	</div>
+</div>
+
+<div style="width: 50%; float:left">
+	<div id="section">
+		<a href="https://www.linuxserver.io/" target="_blank">
+			<img src="/plugins/UnraidDVB/images/linuxserver.png">
+		</a> 
+	</div>
+</div>
 <?
 /* CHBMB & Squid */
 
