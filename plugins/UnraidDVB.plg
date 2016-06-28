@@ -2,8 +2,8 @@
 <!DOCTYPE PLUGIN [
 <!ENTITY name      "UnraidDVB">
 <!ENTITY author    "CHBMB/Squid">
-<!ENTITY version   "2016.06.19c">
-<!ENTITY md5       "aa5c4c58133f73eadac80b526e7b4e23">
+<!ENTITY version   "2016.06.28">
+<!ENTITY md5       "e8798c65304c0831efae0fea64e29a2a">
 <!ENTITY launch    "Settings/UnraidDVB">
 <!ENTITY plugdir   "/usr/local/emhttp/plugins/&name;">
 <!ENTITY github    "linuxserver/Unraid-DVB-Plugin">
@@ -13,7 +13,11 @@
 <PLUGIN name="&name;" author="&author;" version="&version;" launch="&launch;" pluginURL="&pluginURL;">
 
 <CHANGES>
-###206-06-19c
+###2016-06-28
+
+- OpenELEC builds rebranded as LibreELEC to correctly reflect the source of the firmware.  Thanks to CvH over at LibreELEC for his work.
+
+###2016-06-19c
 
 - V6.1.9 and V6.2 Beta 23 TBS DVB-C fixed builds uploaded.
 
