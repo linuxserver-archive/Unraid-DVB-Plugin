@@ -28,6 +28,7 @@ case 'show_description':
 #Sets Text to be displayed in Dropdown Menu
 case 'build_buttons':
   $types['ddexp']     = "Digital Devices Experimental";
+  $types['dd']        = "Digital Devices Github";
   $types['libreelec'] = "LibreElec";
   $types['openelec']  = "OpenElec";
   $types['tbs']       = "TBS";
