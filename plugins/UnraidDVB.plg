@@ -2,8 +2,8 @@
 <!DOCTYPE PLUGIN [
 <!ENTITY name      "UnraidDVB">
 <!ENTITY author    "CHBMB/Squid">
-<!ENTITY version   "2016.06.28">
-<!ENTITY md5       "e8798c65304c0831efae0fea64e29a2a">
+<!ENTITY version   "2016.06.29">
+<!ENTITY md5       "708f50330702fd853777757376b22280">
 <!ENTITY launch    "Settings/UnraidDVB">
 <!ENTITY plugdir   "/usr/local/emhttp/plugins/&name;">
 <!ENTITY github    "linuxserver/Unraid-DVB-Plugin">
@@ -13,7 +13,7 @@
 <PLUGIN name="&name;" author="&author;" version="&version;" launch="&launch;" pluginURL="&pluginURL;">
 
 <CHANGES>
-###2016-06-28
+###2016-06-29
 
 - OpenELEC builds rebranded as LibreELEC to correctly reflect the source of the firmware.  Thanks to CvH over at LibreELEC for his work.
 
