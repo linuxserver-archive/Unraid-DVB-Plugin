@@ -31,6 +31,17 @@ $reboot = (is_file("/tmp/mediabuild/reboot")) ? "true" : "false";
 $kernel = trim(shell_exec( "uname -r" ));
 $mediatree = file_exists( "/lib/modules/$kernel/kernel/drivers/media" ) ? "yes" : "no";
 $dvb_adapter = file_exists( "/dev/dvb/adapter0/frontend0") ? "yes" : "no";
+
+#Detect Adapters
+$adapter0 = shell_exec ( "dmesg | grep -i dvb | grep -i 'adapter 0' | sed 's:^.*\\((.*)\\).*$:\\1:' | tr -d '()'" );
+$adapter1 = shell_exec ( "dmesg | grep -i dvb | grep -i 'adapter 1' | sed 's:^.*\\((.*)\\).*$:\\1:' | tr -d '()'" );
+$adapter2 = shell_exec ( "dmesg | grep -i dvb | grep -i 'adapter 2' | sed 's:^.*\\((.*)\\).*$:\\1:' | tr -d '()'" );
+$adapter3 = shell_exec ( "dmesg | grep -i dvb | grep -i 'adapter 3' | sed 's:^.*\\((.*)\\).*$:\\1:' | tr -d '()'" );
+$adapter4 = shell_exec ( "dmesg | grep -i dvb | grep -i 'adapter 4' | sed 's:^.*\\((.*)\\).*$:\\1:' | tr -d '()'" );
+$adapter5 = shell_exec ( "dmesg | grep -i dvb | grep -i 'adapter 5' | sed 's:^.*\\((.*)\\).*$:\\1:' | tr -d '()'" );
+$adapter6 = shell_exec ( "dmesg | grep -i dvb | grep -i 'adapter 6' | sed 's:^.*\\((.*)\\).*$:\\1:' | tr -d '()'" );
+$adapter7 = shell_exec ( "dmesg | grep -i dvb | grep -i 'adapter 7' | sed 's:^.*\\((.*)\\).*$:\\1:' | tr -d '()'" );
+
 ?>
 
 
@@ -184,7 +195,79 @@ Description:  <span id='description'></span>
 					<td style="color:green"><b>Not Detected</b></td>
                 <?endif;?>
 			</tr>
-	<!-- The parts between these comment lines were written by Wojciech Walaszek for the tvheadend plugin-->			
+	<!-- The parts between these comment lines were written by Wojciech Walaszek for the tvheadend plugin-->
+			<tr>
+				<td>DVB Adapter 0:</td>
+				<?if ($adapter0==""):?>
+					<td style="color:green"><b>Not Detected</b></td>
+				<?else:?>
+					<td style="color:green"><b><?=`echo $adapter0`?></b></td>
+                <?endif;?>
+			</tr>
+			
+            <tr>
+				<td>DVB Adapter 1:</td>
+				<?if ($adapter1==""):?>
+					<td style="color:green"><b>Not Detected</b></td>
+				<?else:?>
+					<td style="color:green"><b><?=`echo $adapter1`?></b></td>
+                <?endif;?>
+			</tr>
+
+			<tr>
+				<td>DVB Adapter 2:</td>
+				<?if ($adapter2==""):?>
+					<td style="color:green"><b>Not Detected</b></td>
+				<?else:?>
+					<td style="color:green"><b><?=`echo $adapter2`?></b></td>
+                <?endif;?>
+			</tr>
+			
+            <tr>
+				<td>DVB Adapter 3:</td>
+				<?if ($adapter3==""):?>
+					<td style="color:green"><b>Not Detected</b></td>
+				<?else:?>
+					<td style="color:green"><b><?=`echo $adapter3`?></b></td>
+                <?endif;?>
+			</tr>
+
+			<tr>
+				<td>DVB Adapter 4:</td>
+				<?if ($adapter4==""):?>
+					<td style="color:green"><b>Not Detected</b></td>
+				<?else:?>
+					<td style="color:green"><b><?=`echo $adapter4`?></b></td>
+                <?endif;?>
+			</tr>
+			
+            <tr>
+				<td>DVB Adapter 5:</td>
+				<?if ($adapter5==""):?>
+					<td style="color:green"><b>Not Detected</b></td>
+				<?else:?>
+					<td style="color:green"><b><?=`echo $adapter5`?></b></td>
+                <?endif;?>
+			</tr>
+
+			<tr>
+				<td>DVB Adapter 6:</td>
+				<?if ($adapter6==""):?>
+					<td style="color:green"><b>Not Detected</b></td>
+				<?else:?>
+					<td style="color:green"><b><?=`echo $adapter6`?></b></td>
+                <?endif;?>
+			</tr>
+			
+            <tr>
+				<td>DVB Adapter 7:</td>
+				<?if ($adapter7==""):?>
+					<td style="color:green"><b>Not Detected</b></td>
+				<?else:?>
+					<td style="color:green"><b><?=`echo $adapter7`?></b></td>
+                <?endif;?>
+			</tr>
+	
         </table>
 </div>
 
@@ -196,6 +279,10 @@ Description:  <span id='description'></span>
 			
 			<tr>
 				<td><a href="http://lime-technology.com/forum/index.php?topic=47899.0" style="color:green"target="_blank"><b>unRAID DVB Edition Support Thread</b></a></td>
+			</tr>
+			
+			<tr>
+				<td><a href="http://lime-technology.com/forum/index.php?topic=50118.0" style="color:green" target="_blank"><b>SatIP Docker by Linuxserver</b></a></td>
 			</tr>
 			
 			<tr>
