@@ -14,6 +14,7 @@
 
 <CHANGES>
 ###2016-07-07
+- V6.1.9 and V6.2 Beta 23 TBS builds updated to V160630 drivers.  To install just download again via plugin.
 
 ###2016-07-04a
 - View which DVB Adapters are present on system. (May or may not work)
