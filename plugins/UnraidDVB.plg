@@ -2,8 +2,8 @@
 <!DOCTYPE PLUGIN [
 <!ENTITY name      "UnraidDVB">
 <!ENTITY author    "CHBMB/Squid">
-<!ENTITY version   "2016.07.04a">
-<!ENTITY md5       "22ccc261a92e4ac3e7caec6c58aeca73">
+<!ENTITY version   "2016.07.07">
+<!ENTITY md5       "a3536fb73a5a7ee40f1ceb6e6c5ad200">
 <!ENTITY launch    "Settings/UnraidDVB">
 <!ENTITY plugdir   "/usr/local/emhttp/plugins/&name;">
 <!ENTITY github    "linuxserver/Unraid-DVB-Plugin">
@@ -13,6 +13,9 @@
 <PLUGIN name="&name;" author="&author;" version="&version;" launch="&launch;" pluginURL="&pluginURL;">
 
 <CHANGES>
+###2016-07-07
+- V6.1.9 and V6.2 Beta 23 TBS builds updated to V160630 drivers.  To install just download again via plugin.
+
 ###2016-07-04a
 - View which DVB Adapters are present on system. (May or may not work)
 
