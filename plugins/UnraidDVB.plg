@@ -2,8 +2,8 @@
 <!DOCTYPE PLUGIN [
 <!ENTITY name      "UnraidDVB">
 <!ENTITY author    "CHBMB/Squid">
-<!ENTITY version   "2016.07.13">
-<!ENTITY md5       "7905d134b3f57f441e311057cc9431d4">
+<!ENTITY version   "2016.07.22">
+<!ENTITY md5       "65c7417f28091bb51a71db51326a4b75">
 <!ENTITY launch    "Settings/UnraidDVB">
 <!ENTITY plugdir   "/usr/local/emhttp/plugins/&name;">
 <!ENTITY github    "linuxserver/Unraid-DVB-Plugin">
@@ -13,6 +13,10 @@
 <PLUGIN name="&name;" author="&author;" version="&version;" launch="&launch;" pluginURL="&pluginURL;">
 
 <CHANGES>
+###2016-07-22
+
+- Useful links updated with Oscam and WebGrab Plus by saarg, DVBLink by chvb and XMLTV Schedules direct by huxy
+
 ###2016-07-13
 
 - V6.2 RC2 TBS DVB-S/T, DVB-C, LibreELEC, Digital Devices Github (Patched) Builds uploaded
