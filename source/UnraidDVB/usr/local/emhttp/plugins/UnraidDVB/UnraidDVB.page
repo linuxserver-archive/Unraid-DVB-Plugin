@@ -282,25 +282,41 @@ Description:  <span id='description'></span>
 			</tr>
 			
 			<tr>
-				<td><a href="http://lime-technology.com/forum/index.php?topic=50118.0" style="color:green" target="_blank"><b>SatIP Docker by Linuxserver</b></a></td>
+				<td><a href="http://lime-technology.com/forum/index.php?topic=50118.0" style="color:green" target="_blank"><b>SatIP Docker by linuxserver</b></a></td>
 			</tr>
 			
 			<tr>
-				<td><a href="http://lime-technology.com/forum/index.php?topic=41110.0" style="color:green" target="_blank"> <b>MythTV Docker by Sparklyballs</b></a></td>
+				<td><a href="http://lime-technology.com/forum/index.php?topic=41110.0" style="color:green" target="_blank"> <b>MythTV Docker by sparklyballs</b></a></td>
 			</tr>
 						
 			<tr>
-				<td><a href="http://lime-technology.com/forum/index.php?topic=46575.0" style="color:green" target="_blank"><b>TVHeadEnd Docker by Binhex</b></a></td>
+				<td><a href="http://lime-technology.com/forum/index.php?topic=46575.0" style="color:green" target="_blank"><b>TVHeadEnd Docker by binhex</b></a></td>
 			</tr>
 			
 			<tr>
-				<td><a href="http://lime-technology.com/forum/index.php?topic=37671.0" style="color:green" target="_blank"><b>TVHeadEnd Docker by Saarg</b></a></td>
+				<td><a href="http://lime-technology.com/forum/index.php?topic=37671.0" style="color:green" target="_blank"><b>TVHeadEnd Docker by saarg</b></a></td>
 			</tr>
 			
 			<tr>
 				<td><a href="http://lime-technology.com/forum/index.php?topic=40704.0" style="color:green" target="_blank"><b>TVHeadEnd Plugin by Mettbrot</b></a></td>
 			</tr>
 			
+			<tr>
+				<td><a href="http://lime-technology.com/forum/index.php?topic=37671.0" style="color:green" target="_blank"><b>WebGrab Plus Docker by saarg</b></a></td>
+			</tr>
+			
+			<tr>
+				<td><a href="http://lime-technology.com/forum/index.php?topic=37671.0" style="color:green" target="_blank"><b>Oscam Docker by saarg</b></a></td>
+			</tr>
+						
+			<tr>
+				<td><a href="http://lime-technology.com/forum/index.php?topic=49578.0" style="color:green" target="_blank"><b>DVBLink Docker by chvb</b></a></td>
+			</tr>
+
+			<tr>
+				<td><a href="https://lime-technology.com/forum/index.php?topic=49457.0" style="color:green" target="_blank"><b>XMLTV Schedules Direct Docker by huxy</b></a></td>
+			</tr>
+
         </table>
 </div>
 
