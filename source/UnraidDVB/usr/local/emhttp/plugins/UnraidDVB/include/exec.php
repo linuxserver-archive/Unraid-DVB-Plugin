@@ -27,13 +27,17 @@ case 'show_description':
 
 #Sets Text to be displayed in Dropdown Menu
 case 'build_buttons':
-  $types['ddexp']     = "Digital Devices Experimental";
-  $types['dd']    	  = "Digital Devices Github";
-  $types['libreelec'] = "LibreElec";
-  $types['openelec']  = "OpenElec";
-  $types['tbs']       = "TBS";
-  $types['tbs-dvbc']  = "TBS DVB-C";
-  $types['stock']     = "unRaid";
+  $types['ddexp']       = "Digital Devices Experimental";
+  $types['dd']    	    = "Digital Devices Github";
+  $types['libreelec']   = "LibreElec";
+  $types['openelec']    = "OpenElec";
+  $types['tbs']         = "TBS DVB-S and DVB-T";
+  $types['tbs-dvbc']    = "TBS DVB-C";
+  $types['crazy']       = "Crazy Cat TBS DVB-S and DVB-T";
+  $types['crazy-c']     = "Crazy Cat TBS DVB-C";
+  $types['tbs-os']      = "Open Source TBS DVB-S and DVB-T";
+  $types['tbs-os-dvbc'] = "Open Source TBS DVB-C";
+  $types['stock']       = "unRaid";
   
   
   $downloadURL = "http://files.linuxserver.io/unraid-dvb/";
