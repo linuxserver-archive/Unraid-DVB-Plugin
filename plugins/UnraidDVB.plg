@@ -2,8 +2,8 @@
 <!DOCTYPE PLUGIN [
 <!ENTITY name      "UnraidDVB">
 <!ENTITY author    "CHBMB/Squid">
-<!ENTITY version   "2016.07.22">
-<!ENTITY md5       "65c7417f28091bb51a71db51326a4b75">
+<!ENTITY version   "2016.07.24">
+<!ENTITY md5       "a30f974bed0d6dff7c8406a7a6de95fc">
 <!ENTITY launch    "Settings/UnraidDVB">
 <!ENTITY plugdir   "/usr/local/emhttp/plugins/&name;">
 <!ENTITY github    "linuxserver/Unraid-DVB-Plugin">
@@ -13,6 +13,12 @@
 <PLUGIN name="&name;" author="&author;" version="&version;" launch="&launch;" pluginURL="&pluginURL;">
 
 <CHANGES>
+###2016-07-24
+- Digital Devices Experimental V6.1.9 and Digital Devices Github V6.19 and V6.2 RC2 builds updated.  Please download these builds again, make the changes described in **&lt;a href="http://lime-technology.com/forum/index.php?topic=47899.msg459092#msg459092" target="_blank">this link&lt;/a>** and then reboot.
+
+
+- Thanks to **&lt;a href="http://lime-technology.com/forum/index.php?action=profile;u=38844" target="_blank">piotrasd&lt;/a>** for finding a solution and testing, enabling the Digital Devices build to continue.
+
 ###2016-07-22
 
 - Useful links updated with Oscam and WebGrab Plus by saarg, DVBLink by chvb and XMLTV Schedules direct by huxy
@@ -157,7 +163,6 @@ The 'post-install' script
 -->
 <FILE Run="/bin/bash">
 <INLINE>
-
 #if [[ -f /boot/bzroot-gui ]]; then
 if grep -q "bzroot-gui" "/boot/syslinux/syslinux.cfg"; then
 	echo "V6.2 compatible"
