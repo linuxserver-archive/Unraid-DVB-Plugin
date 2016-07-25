@@ -14,7 +14,7 @@
 
 <CHANGES>
 ###2016-07-25a
-- Updated to support more builds.
+- Updated to support more builds. TBS (CrazyCat) DVB-S(2) and DVB-T(2) V6.2 RC2 build uploaded.
 
 ###2016-07-24
 - Digital Devices Experimental V6.1.9 and Digital Devices Github V6.19 and V6.2 RC2 builds updated.  Please download these builds again, make the changes described in **&lt;a href="http://lime-technology.com/forum/index.php?topic=47899.msg459092#msg459092" target="_blank">this link&lt;/a>** and then reboot.
