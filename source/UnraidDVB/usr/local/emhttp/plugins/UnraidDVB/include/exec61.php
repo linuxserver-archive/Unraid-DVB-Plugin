@@ -27,16 +27,17 @@ case 'show_description':
 
 #Sets Text to be displayed in Dropdown Menu
 case 'build_buttons':
-  $types['ddexp']        = "Digital Devices Experimental";
-  $types['dd']           = "Digital Devices Github";
-  $types['libreelec']    = "LibreElec";
-  $types['openelec']     = "OpenElec";
-  $types['tbs']          = "TBS DVB-S and DVB-T";
-  $types['tbs-dvbc']     = "TBS DVB-C";
-  $types['crazy-dvbst']  = "Crazy Cat TBS DVB-S and DVB-T";
-  $types['crazy-dvbc']   = "Crazy Cat TBS DVB-C";
-  $types['tbs-os-dvbst'] = "Open Source TBS DVB-S and DVB-T";
-  $types['tbs-os-dvbc']  = "Open Source TBS DVB-C";
+  $types['ddexp']        = "Digital Devices (Experimental)";
+  $types['dd']           = "Digital Devices (Github)";
+  $types['libreelec']    = "LibreELEC";
+  $types['openelec']     = "OpenELEC";
+  $types['tbs']          = "TBS (Official) DVB-S(2) and DVB-T(2)";
+  $types['tbs-dvbst']    = "TBS (Official) DVB-S(2) and DVB-T(2)";
+  $types['tbs-dvbc']     = "TBS (Official) DVB-C";
+  $types['crazy-dvbst']  = "TBS (CrazyCat) DVB-S(2) and DVB-T(2)";
+  $types['crazy-dvbc']   = "TBS (CrazyCat) DVB-C";
+  $types['tbs-os-dvbst'] = "TBS (Open Source) DVB-S(2) and DVB-T(2)";
+  $types['tbs-os-dvbc']  = "TBS (Open Source) DVB-C";
   $types['stock']        = "unRaid";
 
 
