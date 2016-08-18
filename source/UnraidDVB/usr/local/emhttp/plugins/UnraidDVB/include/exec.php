@@ -148,7 +148,7 @@ case 'build_buttons':
     }
     $i = ++$i;
   }
-
+  $o = "<center>";
   foreach ( $buttons as $button )
   {
     if ( $button['name'] == "unRaid" )
@@ -165,6 +165,7 @@ case 'build_buttons':
     }
     $o .= "</select>";
   }
+  $o .= "</center>";
   echo $o;
   break;
 
