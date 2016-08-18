@@ -4,8 +4,12 @@ Title="unRAID DVB Edition"
 ---
 
 <a href="https://www.linuxserver.io/" target="_blank">
-<img src="/plugins/UnraidDVB/images/linuxserver.png">
-</a> 
+<p style="text-align:center;"><img src="/plugins/UnraidDVB/images/linuxserver.png"></p>
+</a>
+
+<a href="https://www.linuxserver.io/index.php/donations/" target="_blank">
+<p style="text-align:center;"><img src="/plugins/UnraidDVB/images/donate.png"></p>
+</a>
 
 <?
 /* CHBMB & Squid */
@@ -320,9 +324,16 @@ Description:  <span id='description'></span>
 			<tr>
 				<td><a href="https://lime-technology.com/forum/index.php?topic=49457.0" style="color:green" target="_blank"><b>XMLTV Schedules Direct Docker by huxy</b></a></td>
 			</tr>
+			
+			<tr>
+				<td><a href="https://www.linuxserver.io/index.php/donations/" style="color:green" target="_blank"><b>XMLTV Schedules Direct Docker by huxy</b></a></td>
+			</tr>
+			
+ 
 
         </table>
 </div>
+
 
 
 
