@@ -3,10 +3,13 @@ Icon="UnraidDVB.png"
 Title="unRAID DVB Edition"
 ---
 
-<a href="https://www.linuxserver.io/" target="_blank">
+<div align="center"><a href="https://www.linuxserver.io/" target="_blank">
 <img src="/plugins/UnraidDVB/images/linuxserver.png">
-</a> 
+</a></div>
 
+<div align="center"><a href="https://www.linuxserver.io/index.php/donations/" target="_blank">
+<img src="/plugins/UnraidDVB/images/donate.png">
+</a></div>
 <?
 /* CHBMB & Squid */
 
@@ -145,18 +148,29 @@ $(function()
 
 </script>
 
+<!-- Upgrade Notification-->
+<br><br>
+<div align="center">
 <div id='upgradeAvailable' hidden><font color='red'>An update to UnraidDVB is Available</font></div>
-
+</div>
+<!-- Download & Install Button-->
+<div align="center">
 <span id='buttons'></span>
 <input type='button' id='install' disabled value='Download & Install' onclick='installBuild();'></input>
 <br><br>
+
+<!-- Cancel Button-->
 <input type='button' value='Cancel' onclick='done();'>
+</div>
 
-Description:  <span id='description'></span>
+<!-- Description-->
+<div align="center">Description:  <span id='description'><font size='4'></font></span></div>
 
-
-<span id='reboot' hidden><font size='4' color='red'>Installation Complete, you must reboot your server</font></span>
+<!-- Reboot Notification-->
+<div align="center"><span id='reboot' hidden><font size='4' color='red'>Installation Complete, you must reboot your server</font></span></div>
 </FORM>
+
+<!-- Left Menu-->
 <div style="width: 50%; float:left">
 	<div id="title">
 		<span class="left">Currently Installed Build</span>
@@ -271,12 +285,13 @@ Description:  <span id='description'></span>
         </table>
 </div>
 
-<div style="width: 50%; float:right">
+<!-- Right Menu-->
+<div style="width: 50%; float:left">
 	<div id="title">
 		<span class="left">Useful Links & Info</span>
 	</div>
-    	<table>
-			
+    	<table align="right">
+		
 			<tr>
 				<td><a href="http://lime-technology.com/forum/index.php?topic=47899.0" style="color:green"target="_blank"><b>unRAID DVB Edition Support Thread</b></a></td>
 			</tr>
@@ -320,7 +335,6 @@ Description:  <span id='description'></span>
 			<tr>
 				<td><a href="https://lime-technology.com/forum/index.php?topic=49457.0" style="color:green" target="_blank"><b>XMLTV Schedules Direct Docker by huxy</b></a></td>
 			</tr>
-
         </table>
 </div>
 
