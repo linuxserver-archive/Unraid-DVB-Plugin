@@ -166,6 +166,7 @@ $o = "<center>";
     $o .= "</select>";
   }
   echo $o;
+$o = "</center>";  
   break;
 
 case "check_reboot":
