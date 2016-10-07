@@ -1,6 +1,6 @@
 <?php
 
-#Variables 
+#Variables
 $mediaPaths['tempFiles']  = "/tmp/mediabuild";
 $mediaPaths['sources'] = $mediaPaths['tempFiles']."/sources.json";
 $mediaPaths['reboot'] = $mediaPaths['tempFiles']."/reboot";
@@ -47,14 +47,14 @@ case 'build_buttons':
   $description = $mediaPaths['tempFiles']."/description";
 
   @unlink($tempFile);
-  
+
   download_url($downloadURL, $tempFile);
 
   if ( ! is_file($tempFile) ) {
     echo "Error Downloading Source Files";
     break;
   }
-  
+
   $contents = explode("\n",file_get_contents($tempFile));
 
   foreach ($contents as $line) {
@@ -83,24 +83,24 @@ case 'build_buttons':
             } else {
               $mediaTypes['imageType'] = $type;
             }
-  
+
             $mediaTypes['imageURL'] = $unRaidVersion['basePath'].$m[1];
             $mediaTypes['imageVersion'] = str_replace("-",".",$unRaidVersion['unRaidVersion']);
             $mediaTypes['imageVersion'] = str_replace("/","",$mediaTypes['imageVersion']);
-          
+
 # now get the description
 
             download_url($mediaTypes['imageURL']."/unraid-media",$description);
- 
+
             if ( is_file($description) ) {
-              $mediaTypes['imageDescription'] = $tempVar = parse_ini_file($description); 
+              $mediaTypes['imageDescription'] = $tempVar = parse_ini_file($description);
 			  $mediaTypes['imageDescription'] = "This will install the ".$tempVar['base']." unRAID DVB build with V".$tempVar['driver']. " drivers";
             } else {
               $mediaTypes['imageDescription'] = "This will install stock unRAID";
             }
-          
+
             @unlink($description);
-          
+
             $mediaVersions[] = $mediaTypes;
 
           }
@@ -123,7 +123,7 @@ case 'build_buttons':
 # set to true for separate menus, or false for all in one
 # doesn't really work for true
 
-  $separate = false;  
+  $separate = false;
 
   exec('mkdir -p "'.$mediaPaths['tempFiles'].'"');
 
