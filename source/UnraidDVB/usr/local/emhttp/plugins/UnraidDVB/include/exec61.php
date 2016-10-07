@@ -42,7 +42,7 @@ case 'build_buttons':
   $types['stock']              = "unRaid";
 
 
-  $downloadURL = "https://files.linuxserver.io/mediabuild/";
+  $downloadURL = "http://files.linuxserver.io/mediabuild/";
   $tempFile = $mediaPaths['tempFiles']."/temp";
   $description = $mediaPaths['tempFiles']."/description";
 
