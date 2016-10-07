@@ -2,8 +2,8 @@
 <!DOCTYPE PLUGIN [
 <!ENTITY name      "UnraidDVB">
 <!ENTITY author    "CHBMB/Squid">
-<!ENTITY version   "2016.10.05">
-<!ENTITY md5       "18249b0970a76e574102d034989ccc47">
+<!ENTITY version   "2016.10.07">
+<!ENTITY md5       "6e51eb6226f3143c3d2913746fd76573">
 <!ENTITY launch    "Settings/UnraidDVB">
 <!ENTITY plugdir   "/usr/local/emhttp/plugins/&name;">
 <!ENTITY github    "linuxserver/Unraid-DVB-Plugin">
@@ -13,8 +13,8 @@
 <PLUGIN name="&name;" author="&author;" version="&version;" launch="&launch;" pluginURL="&pluginURL;">
 
 <CHANGES>
-###2016-10-05
-- Support downloading of builds over https
+###2016-10-07
+- V6.3.0 RC1 TBS DVB-S/T, DVB-C, CrazyCat TBS DVB-S/T, LibreELEC, Digital Devices Github Builds uploaded.
 
 ###2016-10-04
 - V6.2.1 TBS DVB-S/T, DVB-C, CrazyCat TBS DVB-S/T, LibreELEC, Digital Devices Github Builds uploaded.  TBS Drivers updated to 20/09/16
