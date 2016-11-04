@@ -84,7 +84,7 @@ function installBuild()
   var element = document.getElementById("Media");
   var selected = element.options[element.selectedIndex].value;
   var selectedText = element.options[element.selectedIndex].text;
-  
+
   if ( selected == "default" ) {
     element = document.getElementById("unRaid");
     selected = element.options[element.selectedIndex].value;
@@ -120,7 +120,7 @@ $(function()
   }
 
   $("#install").hide();
-  
+
   if ( "<?=$reboot?>" == "true" )
   {
     $("#reboot").show();
@@ -134,7 +134,7 @@ $(function()
 	showConfirmButton: false,
     showCancelButton: false
   });
-  
+
   $.post(URL,{action:'build_buttons'},function(data)
   {
     if (data)
@@ -176,31 +176,31 @@ $(function()
 		<span class="left">Currently Installed Build</span>
 	</div>
     	<table class="settings">
-			
+
 			<tr>
 				<td>unRAID Version:</td>
 				<td style="color:green"><b><?=$unRaidVersion?></b></td>
 			</tr>
-			
+
 			<tr>
 				<td>DVB Version:</td>
 				<td style="color:green"><b><?=$dvbbase?></b></td>
 			</tr>
-			
+
 			<tr>
 				<td>Driver Version:</td>
 				<td style="color:green"><b><?=$dvbdriver?></b></td>
 			</tr>
-	<!-- The parts between these comment lines were written by Wojciech Walaszek for the tvheadend plugin-->		
+	<!-- The parts between these comment lines were written by Wojciech Walaszek for the tvheadend plugin-->
 			<tr>
 				<td>DVB Kernel:</td>
 				<?if ($mediatree=="yes"):?>
 					<td style="color:green"><b>Detected</b></td>
 				<?else:?>
 					<td style="color:green"><b>Not Detected</b></td>
-                <?endif;?>	
+                <?endif;?>
 			</tr>
-			
+
             <tr>
 				<td>DVB Adapter Drivers:</td>
 				<?if ($dvb_adapter=="yes"):?>
@@ -218,7 +218,7 @@ $(function()
 					<td style="color:green"><b><?=`echo $adapter0`?></b></td>
                 <?endif;?>
 			</tr>
-			
+
             <tr>
 				<td>DVB Adapter 1:</td>
 				<?if ($adapter1==""):?>
@@ -236,7 +236,7 @@ $(function()
 					<td style="color:green"><b><?=`echo $adapter2`?></b></td>
                 <?endif;?>
 			</tr>
-			
+
             <tr>
 				<td>DVB Adapter 3:</td>
 				<?if ($adapter3==""):?>
@@ -254,7 +254,7 @@ $(function()
 					<td style="color:green"><b><?=`echo $adapter4`?></b></td>
                 <?endif;?>
 			</tr>
-			
+
             <tr>
 				<td>DVB Adapter 5:</td>
 				<?if ($adapter5==""):?>
@@ -272,7 +272,7 @@ $(function()
 					<td style="color:green"><b><?=`echo $adapter6`?></b></td>
                 <?endif;?>
 			</tr>
-			
+
             <tr>
 				<td>DVB Adapter 7:</td>
 				<?if ($adapter7==""):?>
@@ -281,7 +281,7 @@ $(function()
 					<td style="color:green"><b><?=`echo $adapter7`?></b></td>
                 <?endif;?>
 			</tr>
-	
+
         </table>
 </div>
 
@@ -291,43 +291,43 @@ $(function()
 		<span class="left">Useful Links & Info</span>
 	</div>
     	<table align="right">
-		
+
 			<tr>
 				<td><a href="http://lime-technology.com/forum/index.php?topic=47899.0" style="color:green"target="_blank"><b>unRAID DVB Edition Support Thread</b></a></td>
 			</tr>
-			
+
 			<tr>
 				<td><a href="http://lime-technology.com/forum/index.php?topic=47899.msg459092#msg459092" style="color:green" target="_blank"><b>Digital Devices ddbridge.conf Setup Info</b></a></td>
 			</tr>
-			
+
 			<tr>
 				<td><a href="http://lime-technology.com/forum/index.php?topic=50118.0" style="color:green" target="_blank"><b>SatIP Docker by linuxserver</b></a></td>
 			</tr>
-			
+
 			<tr>
 				<td><a href="http://lime-technology.com/forum/index.php?topic=41110.0" style="color:green" target="_blank"> <b>MythTV Docker by sparklyballs</b></a></td>
 			</tr>
-						
+
 			<tr>
 				<td><a href="http://lime-technology.com/forum/index.php?topic=46575.0" style="color:green" target="_blank"><b>TVHeadEnd Docker by binhex</b></a></td>
 			</tr>
-			
+
 			<tr>
 				<td><a href="http://lime-technology.com/forum/index.php?topic=37671.0" style="color:green" target="_blank"><b>TVHeadEnd Docker by saarg</b></a></td>
 			</tr>
-			
+
 			<tr>
 				<td><a href="http://lime-technology.com/forum/index.php?topic=40704.0" style="color:green" target="_blank"><b>TVHeadEnd Plugin by Mettbrot</b></a></td>
 			</tr>
-			
+
 			<tr>
 				<td><a href="http://lime-technology.com/forum/index.php?topic=37671.0" style="color:green" target="_blank"><b>WebGrab Plus Docker by saarg</b></a></td>
 			</tr>
-			
+
 			<tr>
 				<td><a href="http://lime-technology.com/forum/index.php?topic=37671.0" style="color:green" target="_blank"><b>Oscam Docker by saarg</b></a></td>
 			</tr>
-						
+
 			<tr>
 				<td><a href="http://lime-technology.com/forum/index.php?topic=49578.0" style="color:green" target="_blank"><b>DVBLink Docker by chvb</b></a></td>
 			</tr>
@@ -337,6 +337,3 @@ $(function()
 			</tr>
         </table>
 </div>
-
-
-
