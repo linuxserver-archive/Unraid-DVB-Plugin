@@ -31,13 +31,12 @@ case 'build_buttons':
   $types['dd']                 = "Digital Devices (Github)";
   $types['libreelec']          = "LibreELEC";
   $types['openelec']           = "OpenELEC";
-  $types['tbs']                = "TBS (Official) DVB-S(2) and DVB-T(2)";
+  $types['tbs']                = "TBS (Official) DVB-S/T";
   $types['tbs-dvbc']           = "TBS (Official) DVB-C";
-  $types['tbs-official-dvbst'] = "TBS (Official) DVB-S(2) and DVB-T(2)";
+  $types['tbs-official-dvbst'] = "TBS (Official) DVB-S/T";
   $types['tbs-official-dvbc']  = "TBS (Official) DVB-C";
-  $types['tbs-crazy-dvbst']    = "TBS (CrazyCat) DVB-S(2) and DVB-T(2)";
-  $types['tbs-crazy-dvbc']     = "TBS (CrazyCat) DVB-C";
-  $types['tbs-os-dvbst']       = "TBS (Open Source) ATSC-C, DVB-C, DVB-S(2) and DVB-T(2)";
+  $types['tbs-crazy-dvbst']    = "TBS (CrazyCat) DVB-S/T";
+  $types['tbs-os-dvbst']       = "TBS (Open Source)";
   $types['stock']              = "unRaid";
 
 
