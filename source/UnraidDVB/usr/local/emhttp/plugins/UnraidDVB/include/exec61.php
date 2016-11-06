@@ -37,8 +37,7 @@ case 'build_buttons':
   $types['tbs-official-dvbc']  = "TBS (Official) DVB-C";
   $types['tbs-crazy-dvbst']    = "TBS (CrazyCat) DVB-S(2) and DVB-T(2)";
   $types['tbs-crazy-dvbc']     = "TBS (CrazyCat) DVB-C";
-  $types['tbs-os-dvbst']       = "TBS (Open Source) DVB-S(2) and DVB-T(2)";
-  $types['tbs-os-dvbc']        = "TBS (Open Source) DVB-C";
+  $types['tbs-os-dvbst']       = "TBS (Open Source) ATSC-C, DVB-C, DVB-S(2) and DVB-T(2)";
   $types['stock']              = "unRaid";
 
 
