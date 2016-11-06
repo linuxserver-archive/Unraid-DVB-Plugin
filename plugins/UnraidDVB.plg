@@ -2,8 +2,8 @@
 <!DOCTYPE PLUGIN [
 <!ENTITY name      "UnraidDVB">
 <!ENTITY author    "CHBMB/Squid">
-<!ENTITY version   "2016.11.06">
-<!ENTITY md5       "cd5a92835232092c99f227ce678810a0">
+<!ENTITY version   "2016.11.06a">
+<!ENTITY md5       "9d9bc1e2fe2c8df2104c62dd1d2392e7">
 <!ENTITY launch    "Settings/UnraidDVB">
 <!ENTITY plugdir   "/usr/local/emhttp/plugins/&name;">
 <!ENTITY github    "linuxserver/Unraid-DVB-Plugin">
@@ -13,6 +13,9 @@
 <PLUGIN name="&name;" author="&author;" version="&version;" launch="&launch;" pluginURL="&pluginURL;">
 
 <CHANGES>
+###2016-11-06a
+- A few display fixes.
+
 ###2016-11-06
 - TBS OpenSource build description changed to reflect support for DVB-C and ATSC-C.
 
