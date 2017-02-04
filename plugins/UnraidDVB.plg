@@ -2,8 +2,8 @@
 <!DOCTYPE PLUGIN [
 <!ENTITY name      "UnraidDVB">
 <!ENTITY author    "CHBMB/Squid">
-<!ENTITY version   "2017.02.04">
-<!ENTITY md5       "9744f404335617ed6c64a0efdcddc621">
+<!ENTITY version   "2017.02.04a">
+<!ENTITY md5       "21ca7a546b731a875933619adf8e87a3">
 <!ENTITY launch    "Settings/UnraidDVB">
 <!ENTITY plugdir   "/usr/local/emhttp/plugins/&name;">
 <!ENTITY github    "linuxserver/Unraid-DVB-Plugin">
@@ -13,6 +13,9 @@
 <PLUGIN name="&name;" author="&author;" version="&version;" launch="&launch;" pluginURL="&pluginURL;">
 
 <CHANGES>
+###2017-02-04a
+- Display fix.
+
 ###2017-02-04
 - V6.3.0  LibreELEC, TBS OpenSource and Digital Devices Github builds uploaded.
 
@@ -243,6 +246,7 @@ fi
 # Parse DVB Card Details
 # Could also use dmesg | grep -i dvb | grep -i 'adapter 1' | cut -d "(" -f2 | cut -d ")" -f1
 
+mkdir -p /tmp/mediabuild/
 dmesg | grep -i dvb | grep -i 'adapter 0' | sed "s:^.*\\((.*)\\).*$:\\1:" | tr -d "()" > /tmp/mediabuild/adapter0
 dmesg | grep -i dvb | grep -i 'adapter 1' | sed "s:^.*\\((.*)\\).*$:\\1:" | tr -d "()" > /tmp/mediabuild/adapter1
 dmesg | grep -i dvb | grep -i 'adapter 2' | sed "s:^.*\\((.*)\\).*$:\\1:" | tr -d "()" > /tmp/mediabuild/adapter2
