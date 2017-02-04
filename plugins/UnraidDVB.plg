@@ -2,8 +2,8 @@
 <!DOCTYPE PLUGIN [
 <!ENTITY name      "UnraidDVB">
 <!ENTITY author    "CHBMB/Squid">
-<!ENTITY version   "2017.01.28">
-<!ENTITY md5       "0809a65e7749de53202eb102eb744086">
+<!ENTITY version   "2017.02.04">
+<!ENTITY md5       "9744f404335617ed6c64a0efdcddc621">
 <!ENTITY launch    "Settings/UnraidDVB">
 <!ENTITY plugdir   "/usr/local/emhttp/plugins/&name;">
 <!ENTITY github    "linuxserver/Unraid-DVB-Plugin">
@@ -13,8 +13,11 @@
 <PLUGIN name="&name;" author="&author;" version="&version;" launch="&launch;" pluginURL="&pluginURL;">
 
 <CHANGES>
+###2017-02-04
+- V6.3.0  LibreELEC, TBS OpenSource and Digital Devices Github builds uploaded.
+
 ###2017-01-28
-- V6.3 RC6  LibreELEC, TBS DVB-ST, DVB-C and TBS OpenSource and Digital Devices Github builds uploaded.
+- V6.3 RC9  LibreELEC, TBS OpenSource and Digital Devices Github builds uploaded.
 
 ###2016-12-07
 - V6.3 RC6  LibreELEC, TBS OpenSource and Digital Devices Github builds uploaded.
@@ -236,6 +239,18 @@ fi
 if [ -d /dev/dvb ]; then
   chown -R nobody:users /dev/dvb
 fi
+
+# Parse DVB Card Details
+# Could also use dmesg | grep -i dvb | grep -i 'adapter 1' | cut -d "(" -f2 | cut -d ")" -f1
+
+dmesg | grep -i dvb | grep -i 'adapter 0' | sed "s:^.*\\((.*)\\).*$:\\1:" | tr -d "()" > /tmp/mediabuild/adapter0
+dmesg | grep -i dvb | grep -i 'adapter 1' | sed "s:^.*\\((.*)\\).*$:\\1:" | tr -d "()" > /tmp/mediabuild/adapter1
+dmesg | grep -i dvb | grep -i 'adapter 2' | sed "s:^.*\\((.*)\\).*$:\\1:" | tr -d "()" > /tmp/mediabuild/adapter2
+dmesg | grep -i dvb | grep -i 'adapter 3' | sed "s:^.*\\((.*)\\).*$:\\1:" | tr -d "()" > /tmp/mediabuild/adapter3
+dmesg | grep -i dvb | grep -i 'adapter 4' | sed "s:^.*\\((.*)\\).*$:\\1:" | tr -d "()" > /tmp/mediabuild/adapter4
+dmesg | grep -i dvb | grep -i 'adapter 5' | sed "s:^.*\\((.*)\\).*$:\\1:" | tr -d "()" > /tmp/mediabuild/adapter5
+dmesg | grep -i dvb | grep -i 'adapter 6' | sed "s:^.*\\((.*)\\).*$:\\1:" | tr -d "()" > /tmp/mediabuild/adapter6
+dmesg | grep -i dvb | grep -i 'adapter 7' | sed "s:^.*\\((.*)\\).*$:\\1:" | tr -d "()" > /tmp/mediabuild/adapter7
 
 echo ""
 echo "----------------------------------------------------"
