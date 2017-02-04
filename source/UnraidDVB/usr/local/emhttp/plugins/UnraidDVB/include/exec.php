@@ -27,16 +27,11 @@ case 'show_description':
 
 #Sets Text to be displayed in Dropdown Menu
 case 'build_buttons':
-  $types['ddexp']              = "Digital Devices (Experimental)";
   $types['dd']                 = "Digital Devices (Github)";
   $types['libreelec']          = "LibreELEC";
-  $types['openelec']           = "OpenELEC";
-  $types['tbs']                = "TBS (Official) DVB-S/T";
-  $types['tbs-dvbc']           = "TBS (Official) DVB-C";
   $types['tbs-official-dvbst'] = "TBS (Official) DVB-S/T";
   $types['tbs-official-dvbc']  = "TBS (Official) DVB-C";
   $types['tbs-crazy-dvbst']    = "TBS (CrazyCat) DVB-S/T";
-  $types['tbs-os-dvbst']       = "TBS (Open Source)";
   $types['tbs-os']             = "TBS (Open Source)";
   $types['stock']              = "unRaid";
 
