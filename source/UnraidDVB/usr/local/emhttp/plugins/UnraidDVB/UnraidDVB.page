@@ -36,14 +36,14 @@ $mediatree = file_exists( "/lib/modules/$kernel/kernel/drivers/media" ) ? "yes" 
 $dvb_adapter = file_exists( "/dev/dvb/adapter0/frontend0") ? "yes" : "no";
 
 #Detect Adapters
-$adapter0 = shell_exec ( "dmesg | grep -i dvb | grep -i 'adapter 0' | sed 's:^.*\\((.*)\\).*$:\\1:' | tr -d '()'" );
-$adapter1 = shell_exec ( "dmesg | grep -i dvb | grep -i 'adapter 1' | sed 's:^.*\\((.*)\\).*$:\\1:' | tr -d '()'" );
-$adapter2 = shell_exec ( "dmesg | grep -i dvb | grep -i 'adapter 2' | sed 's:^.*\\((.*)\\).*$:\\1:' | tr -d '()'" );
-$adapter3 = shell_exec ( "dmesg | grep -i dvb | grep -i 'adapter 3' | sed 's:^.*\\((.*)\\).*$:\\1:' | tr -d '()'" );
-$adapter4 = shell_exec ( "dmesg | grep -i dvb | grep -i 'adapter 4' | sed 's:^.*\\((.*)\\).*$:\\1:' | tr -d '()'" );
-$adapter5 = shell_exec ( "dmesg | grep -i dvb | grep -i 'adapter 5' | sed 's:^.*\\((.*)\\).*$:\\1:' | tr -d '()'" );
-$adapter6 = shell_exec ( "dmesg | grep -i dvb | grep -i 'adapter 6' | sed 's:^.*\\((.*)\\).*$:\\1:' | tr -d '()'" );
-$adapter7 = shell_exec ( "dmesg | grep -i dvb | grep -i 'adapter 7' | sed 's:^.*\\((.*)\\).*$:\\1:' | tr -d '()'" );
+$adapter0 = shell_exec ( "cat /tmp/mediabuild/adapter0" );
+$adapter1 = shell_exec ( "cat /tmp/mediabuild/adapter1" );
+$adapter2 = shell_exec ( "cat /tmp/mediabuild/adapter2" );
+$adapter3 = shell_exec ( "cat /tmp/mediabuild/adapter3" );
+$adapter4 = shell_exec ( "cat /tmp/mediabuild/adapter4" );
+$adapter5 = shell_exec ( "cat /tmp/mediabuild/adapter5" );
+$adapter6 = shell_exec ( "cat /tmp/mediabuild/adapter6" );
+$adapter7 = shell_exec ( "cat /tmp/mediabuild/adapter7" );
 
 ?>
 
