@@ -2,8 +2,8 @@
 <!DOCTYPE PLUGIN [
 <!ENTITY name      "UnraidDVB">
 <!ENTITY author    "CHBMB/Squid">
-<!ENTITY version   "2017.01.28">
-<!ENTITY md5       "0809a65e7749de53202eb102eb744086">
+<!ENTITY version   "2017.02.04">
+<!ENTITY md5       "9b091db4fc2b26bafdc7e4ea98fedab7">
 <!ENTITY launch    "Settings/UnraidDVB">
 <!ENTITY plugdir   "/usr/local/emhttp/plugins/&name;">
 <!ENTITY github    "linuxserver/Unraid-DVB-Plugin">
@@ -13,8 +13,11 @@
 <PLUGIN name="&name;" author="&author;" version="&version;" launch="&launch;" pluginURL="&pluginURL;">
 
 <CHANGES>
+###2017-02-04
+- V6.3 LibreELEC, TBS OpenSource and Digital Devices Github builds uploaded.
+
 ###2017-01-28
-- V6.3 RC6  LibreELEC, TBS DVB-ST, DVB-C and TBS OpenSource and Digital Devices Github builds uploaded.
+- V6.3 RC9  LibreELEC, TBS DVB-ST, DVB-C and TBS OpenSource and Digital Devices Github builds uploaded.
 
 ###2016-12-07
 - V6.3 RC6  LibreELEC, TBS OpenSource and Digital Devices Github builds uploaded.
