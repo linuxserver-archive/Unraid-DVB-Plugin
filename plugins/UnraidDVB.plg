@@ -2,8 +2,8 @@
 <!DOCTYPE PLUGIN [
 <!ENTITY name      "UnraidDVB">
 <!ENTITY author    "CHBMB/Squid">
-<!ENTITY version   "2017.02.06a">
-<!ENTITY md5       "fc02b86aea9c8cd2d436cf74bd4699d9">
+<!ENTITY version   "2017.02.09">
+<!ENTITY md5       "75e6b4667c1a25d7fb2c2d26b9c6a03a">
 <!ENTITY launch    "Settings/UnraidDVB">
 <!ENTITY plugdir   "/usr/local/emhttp/plugins/&name;">
 <!ENTITY github    "linuxserver/Unraid-DVB-Plugin">
@@ -13,6 +13,9 @@
 <PLUGIN name="&name;" author="&author;" version="&version;" launch="&launch;" pluginURL="&pluginURL;">
 
 <CHANGES>
+###2017-02-09
+- V6.3.1  TBS DVB-S/T, TBS DVB-C, CrazyCat TBS DVB-S/T, TBS OpenSource, LibreELEC, Digital Devices Github Builds uploaded.  Firewire activated in kernel to add SageTV support.
+
 ###2017-02-06a
 - V6.3.0  TBS CrazyCat build uploaded.
 
