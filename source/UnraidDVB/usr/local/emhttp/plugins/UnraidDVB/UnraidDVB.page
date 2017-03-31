@@ -329,10 +329,6 @@ $(function()
 			</tr>
 
 			<tr>
-				<td><a href="http://lime-technology.com/forum/index.php?topic=49578.0" style="color:green" target="_blank"><b>DVBLink Docker by chvb</b></a></td>
-			</tr>
-
-			<tr>
 				<td><a href="https://lime-technology.com/forum/index.php?topic=49457.0" style="color:green" target="_blank"><b>XMLTV Schedules Direct Docker by huxy</b></a></td>
 			</tr>
         </table>
