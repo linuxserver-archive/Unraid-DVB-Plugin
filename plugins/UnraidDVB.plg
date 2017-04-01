@@ -2,8 +2,8 @@
 <!DOCTYPE PLUGIN [
 <!ENTITY name      "UnraidDVB">
 <!ENTITY author    "CHBMB/Squid">
-<!ENTITY version   "2017.04.01">
-<!ENTITY md5       "aec599661c2366db8e0895771d588f4f">
+<!ENTITY version   "2017.04.01a">
+<!ENTITY md5       "ab5a904055399ea84209fdeca73621ee">
 <!ENTITY launch    "Settings/UnraidDVB">
 <!ENTITY plugdir   "/usr/local/emhttp/plugins/&name;">
 <!ENTITY github    "linuxserver/Unraid-DVB-Plugin">
