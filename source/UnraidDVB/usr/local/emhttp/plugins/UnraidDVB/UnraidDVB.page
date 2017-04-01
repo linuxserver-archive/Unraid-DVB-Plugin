@@ -300,17 +300,17 @@ $(function()
 				<td><a href="https://forums.lime-technology.com/topic/46194-unraid-dvb-edition/#comment-455031" style="color:green" target="_blank"><b>Digital Devices ddbridge.conf Setup Info</b></a></td>
 			</tr>
 
-      			<tr>
-      				<td><a href="https://forums.lime-technology.com/topic/49898-support-linuxserverio-tvheadend/" style="color:green" target="_blank"><b>TVHeadEnd Docker by linuxserver</b></a></td>
-     			</tr>
+      <tr>
+      	<td><a href="https://forums.lime-technology.com/topic/49898-support-linuxserverio-tvheadend/" style="color:green" target="_blank"><b>TVHeadEnd Docker by linuxserver</b></a></td>
+      </tr>
 
 			<tr>
 				<td><a href="https://forums.lime-technology.com/topic/48411-support-linuxserverio-minisatip/" style="color:green" target="_blank"><b>SatIP Docker by linuxserver</b></a></td>
 			</tr>
 
-      			<tr>
-      				<td><a href="https://forums.lime-technology.com/topic/50548-support-linuxserverio-oscam/" style="color:green" target="_blank"><b>Oscam Docker by linuxserver</b></a></td>
-      			</tr>
+      <tr>
+        <td><a href="https://forums.lime-technology.com/topic/50548-support-linuxserverio-oscam/" style="color:green" target="_blank"><b>Oscam Docker by linuxserver</b></a></td>
+      </tr>
 
 			<tr>
 				<td><a href="https://forums.lime-technology.com/topic/39429-docker-mythtv/" style="color:green" target="_blank"> <b>MythTV Docker by sparklyballs</b></a></td>
@@ -331,5 +331,5 @@ $(function()
 			<tr>
 				<td><a href="https://forums.lime-technology.com/topic/47751-support-huxy-xmltv-schedules-direct/" style="color:green" target="_blank"><b>XMLTV Schedules Direct Docker by huxy</b></a></td>
 			</tr>
-        </table>
+    </table>
 </div>
