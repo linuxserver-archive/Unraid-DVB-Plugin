@@ -1,4 +1,4 @@
-<?php
+<?PHP
 
 #Variables
 $mediaPaths['tempFiles']  = "/tmp/mediabuild";
@@ -50,17 +50,19 @@ case 'build_buttons':
   }
 
   $contents = explode("\n",file_get_contents($tempFile));
-
   foreach ($contents as $line) {
     if ( strpos($line,"href") ) {
-      if ( preg_match('/"([^"]+)"/', $line, $m) ) {
-        $versionInfo['unRaidVersion'] = $m[1];
-        $versionInfo['basePath'] = $downloadURL.$m[1];
-        $versions[] = $versionInfo;
+      $temp = substr($line,strpos($line,"href"));
+      $temp2 = explode('"',$temp);
+      if ( $temp2[1][0] == "?" || $temp2[1][0] == "/" ) {
+        continue;
       }
+      $ver = str_replace("/","",$temp2[1]);
+      $versionInfo['unRaidVersion'] = $ver;
+      $versionInfo['basePath'] = $downloadURL.$ver;
+      $versions[] = $versionInfo;
     }
   }
-  unset($versions[0]);
 
   foreach ( $versions as $unRaidVersion) {
     download_url($unRaidVersion['basePath'],$tempFile);
@@ -69,40 +71,41 @@ case 'build_buttons':
     unset($mediaTemp);
     foreach ($contents as $line) {
       if ( strpos($line,"href") ) {
-        if ( preg_match('/"([^"]+)"/', $line, $m) ) {
-          if ( ! stripos($line,"parent") ) {
-            $type = str_replace("/","",$m[1]);
-            if ( $types[$type] ) {
-              $mediaTypes['imageType'] = $types[$type];
-            } else {
-              $mediaTypes['imageType'] = $type;
-            }
+        if ( stripos($line,"parent") ) {
+          continue;
+        }
+        $temp = substr($line,strpos($line,"href"));
+        $temp2 = explode('"',$temp);
+        if ( $temp2[1][0] == "?" ) {
+          continue;
+        }
+        $m[1] = $temp2[1];
+        $type = str_replace("/","",$m[1]);
+        if ( $types[$type] ) {
+          $mediaTypes['imageType'] = $types[$type];
+        } else {
+          $mediaTypes['imageType'] = $type;
+        }
 
-            $mediaTypes['imageURL'] = $unRaidVersion['basePath'].$m[1];
-            $mediaTypes['imageVersion'] = str_replace("-",".",$unRaidVersion['unRaidVersion']);
-            $mediaTypes['imageVersion'] = str_replace("/","",$mediaTypes['imageVersion']);
+        $mediaTypes['imageURL'] = $unRaidVersion['basePath']."/".$m[1];
+        $mediaTypes['imageVersion'] = str_replace("-",".",$unRaidVersion['unRaidVersion']);
+        $mediaTypes['imageVersion'] = str_replace("/","",$mediaTypes['imageVersion']);
 
 # now get the description
 
-            download_url($mediaTypes['imageURL']."/unraid-media",$description);
+        download_url($mediaTypes['imageURL']."/unraid-media",$description);
 
-            if ( is_file($description) ) {
-              $mediaTypes['imageDescription'] = $tempVar = parse_ini_file($description);
-			  $mediaTypes['imageDescription'] = "This will install the ".$tempVar['base']." unRAID DVB build with V".$tempVar['driver']. " drivers";
-            } else {
-              $mediaTypes['imageDescription'] = "This will install stock unRAID";
-            }
-
-            @unlink($description);
-
-            $mediaVersions[] = $mediaTypes;
-
-          }
+        if ( is_file($description) ) {
+          $mediaTypes['imageDescription'] = $tempVar = parse_ini_file($description);
+			    $mediaTypes['imageDescription'] = "This will install the ".$tempVar['base']." unRAID DVB build with V".$tempVar['driver']. " drivers";
+        } else {
+          $mediaTypes['imageDescription'] = "This will install stock unRAID";
         }
+        @unlink($description);
+        $mediaVersions[] = $mediaTypes;
       }
     }
   }
-
   unlink($tempFile);
 
   $build = array();
@@ -110,7 +113,6 @@ case 'build_buttons':
     $build[$key] = $row['imageType'];
   }
   array_multisort($build, SORT_ASC, $mediaVersions);
-
 
   file_put_contents($mediaPaths['sources'],json_encode($mediaVersions, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT));
 
@@ -126,14 +128,11 @@ case 'build_buttons':
     $reboot = "true";
   }
 
-
   $sources = json_decode(file_get_contents($mediaPaths['sources']),true);
   $i = 0;
-  foreach ($sources as $source)
-  {
+  foreach ($sources as $source) {
     $source['id'] = $i;
-    if ( $source['imageType'] == "unRaid" )
-    {
+    if ( $source['imageType'] == "unRaid" ) {
       $buttons['unRaid']['name'] = "unRaid";
       $buttons['unRaid']['builds'][] = $source;
     } else {
@@ -142,25 +141,22 @@ case 'build_buttons':
     }
     $i = ++$i;
   }
-$o = "<center>";
-  foreach ( $buttons as $button )
-  {
-    if ( $button['name'] == "unRaid" )
-    {
+  $o = "<center>";
+  foreach ( $buttons as $button ) {
+    if ( $button['name'] == "unRaid" ) {
       $o .= "Stock unRaid Builds: <select id='unRaid' onchange='showDescription0(value);'>";
     } else {
       $o .= "DVB unRAID Builds: <select id='Media' onchange='showDescription1(value);'>";
     }
 
     $o .= "<option value='default' disabled selected>Select an image to install</option>";
-    foreach ($button['builds'] as $option)
-    {
+    foreach ($button['builds'] as $option) {
       $o .= '<option value="'.$option['id'].'" onselect="showDescription();">'.$option['imageType'].' '.$option['imageVersion'].'</option>';
     }
     $o .= "</select>";
   }
   echo $o;
-$o = "</center>";
+  $o = "</center>";
   break;
 
 case "check_reboot":
