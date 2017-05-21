@@ -201,7 +201,7 @@ $(function()
                 <?endif;?>
 			</tr>
 
-            <tr>
+            		<tr>
 				<td>DVB Adapter Drivers:</td>
 				<?if ($dvb_adapter=="yes"):?>
 					<td style="color:green"><b>Detected</b></td>
@@ -291,6 +291,7 @@ $(function()
 		<span class="left">Useful Links & Info</span>
 	</div>
     	<table align="right">
+<table class="settings">
 
 			<tr>
 				<td><a href="https://forums.lime-technology.com/topic/46194-unraid-dvb-edition/" style="color:green"target="_blank"><b>unRAID DVB Edition Support Thread</b></a></td>
