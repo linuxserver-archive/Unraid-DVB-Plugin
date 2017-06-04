@@ -265,6 +265,8 @@ else
 	mv -f /usr/local/emhttp/plugins/UnraidDVB/include/install63.php /usr/local/emhttp/plugins/UnraidDVB/include/install.php;
   mv -f /etc/unraid-version /lib/firmware/
 fi
+</INLINE>
+</FILE>
 
 <!--
 The 'post-install' script
