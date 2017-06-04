@@ -2,8 +2,8 @@
 <!DOCTYPE PLUGIN [
 <!ENTITY name      "UnraidDVB">
 <!ENTITY author    "CHBMB/Squid">
-<!ENTITY version   "2017.05.27">
-<!ENTITY md5       "1375cc5f685d2edb5c303c7db0fb73e5">
+<!ENTITY version   "2017.06.05">
+<!ENTITY md5       "1207ed3c8620c1eb133d2d882b354c45">
 <!ENTITY launch    "Settings/UnraidDVB">
 <!ENTITY plugdir   "/usr/local/emhttp/plugins/&name;">
 <!ENTITY github    "linuxserver/Unraid-DVB-Plugin">
@@ -13,6 +13,9 @@
 <PLUGIN name="&name;" author="&author;" version="&version;" launch="&launch;" pluginURL="&pluginURL;">
 
 <CHANGES>
+###2017-06-05
+- Plugin updated to accomodate new bz files.  Must update to v6.4 via official LT plugin prior to getting access to builds here.  Builds not yet done.
+
 ###2017-05-27
 - V6.3.5  TBS DVB-S/T, TBS DVB-C, CrazyCat TBS DVB-S/T, TBS OpenSource, LibreELEC, Digital Devices Github Builds uploaded. CSS fixes and SSL.
 
@@ -247,6 +250,21 @@ The 'source' file.
 <URL>https://raw.github.com/&github;/master/archive/&name;-&version;.txz</URL>
 <MD5>&md5;</MD5>
 </FILE>
+
+<!--
+The 'post-install' script
+-->
+<FILE Run="/bin/bash">
+<INLINE>
+if [[ -f /boot/bzmodules ]]; then
+#if grep -q "bzroot-gui" "/boot/syslinux/syslinux.cfg"; then
+	echo "V6.4 compatible"
+else
+	echo "Not yet V6.4 compatible, upgrade via LimeTech plugin to get access to V6.4 DVB Builds";
+	mv -f /usr/local/emhttp/plugins/UnraidDVB/include/exec63.php /usr/local/emhttp/plugins/UnraidDVB/include/exec.php;
+	mv -f /usr/local/emhttp/plugins/UnraidDVB/include/install63.php /usr/local/emhttp/plugins/UnraidDVB/include/install.php;
+  mv -f /etc/unraid-version /lib/firmware/
+fi
 
 <!--
 The 'post-install' script
