@@ -262,7 +262,7 @@ else
 	echo "Not yet V6.4 compatible, upgrade via LimeTech plugin to get access to V6.4 DVB Builds";
 	mv -f /usr/local/emhttp/plugins/UnraidDVB/include/exec63.php /usr/local/emhttp/plugins/UnraidDVB/include/exec.php;
 	mv -f /usr/local/emhttp/plugins/UnraidDVB/include/install63.php /usr/local/emhttp/plugins/UnraidDVB/include/install.php;
-        mv -f /etc/unraid-version /lib/firmware/
+        mv -f /etc/unraid-media /lib/firmware/
 fi
 </INLINE>
 </FILE>
