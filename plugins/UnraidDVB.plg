@@ -2,8 +2,8 @@
 <!DOCTYPE PLUGIN [
 <!ENTITY name      "UnraidDVB">
 <!ENTITY author    "CHBMB/Squid">
-<!ENTITY version   "2017.06.05">
-<!ENTITY md5       "1207ed3c8620c1eb133d2d882b354c45">
+<!ENTITY version   "2017.06.05a">
+<!ENTITY md5       "383e53840ae8c67088f08a9df9f6604a">
 <!ENTITY launch    "Settings/UnraidDVB">
 <!ENTITY plugdir   "/usr/local/emhttp/plugins/&name;">
 <!ENTITY github    "linuxserver/Unraid-DVB-Plugin">
@@ -13,7 +13,7 @@
 <PLUGIN name="&name;" author="&author;" version="&version;" launch="&launch;" pluginURL="&pluginURL;">
 
 <CHANGES>
-###2017-06-05
+###2017-06-05a
 - Plugin updated to accomodate new bz files.  Must update to v6.4 via official LT plugin prior to getting access to builds here.  Builds not yet done.
 
 ###2017-05-27
@@ -108,108 +108,81 @@
 
 ###2016-07-24
 - Digital Devices Experimental V6.1.9 and Digital Devices Github V6.19 and V6.2 RC2 builds updated.  Please download these builds again, make the changes described in **&lt;a href="http://lime-technology.com/forum/index.php?topic=47899.msg459092#msg459092" target="_blank">this link&lt;/a>** and then reboot.
-
-
 - Thanks to **&lt;a href="http://lime-technology.com/forum/index.php?action=profile;u=38844" target="_blank">piotrasd&lt;/a>** for finding a solution and testing, enabling the Digital Devices build to continue.
 
 ###2016-07-22
-
 - Useful links updated with Oscam and WebGrab Plus by saarg, DVBLink by chvb and XMLTV Schedules direct by huxy
 
 ###2016-07-13
-
 - V6.2 RC2 TBS DVB-S/T, DVB-C, LibreELEC, Digital Devices Github (Patched) Builds uploaded
 
 ###2016-07-10
-
 - V6.2 RC1 Digital Devices Github (patched for syslog filling with shite)
 
 ###2016-07-08
-
 - V6.2 RC1 TBS DVB-S/T, DVB-C, LibreELEC, Digital Devices Github Builds uploaded
 
 ###2016-07-07
-
 - V6.1.9 and V6.2 Beta 23 TBS builds updated to V160630 drivers.  To install just download again via plugin.
 
 ###2016-07-04a
-
 - View which DVB Adapters are present on system.
 
 ###2016-07-04
-
 - LibreELEC v6.1.9 and v6.2 Beta 23 builds uploaded.
 
 ###2016-06-29
-
 - OpenELEC builds rebranded as LibreELEC to correctly reflect the source of the firmware.  Thanks to CvH over at LibreELEC for his work.
 
 ###2016-06-19c
-
 - V6.1.9 and V6.2 Beta 23 TBS DVB-C fixed builds uploaded.
 
 ###2016-06-19b
-
 - v6.1.9 and V6.2 Beta 23 Digital Devices Github and TBS DVB-C builds all uploaded.
 
 ###2016-06-19a
-
 - Digital Devices Github - Automatically install ddbridge.conf in /boot/config/plugins/UnraidDVB/ to enable end-user editing.
 
 ###2016-06-19
-
 - Support for TBS DVB-C drivers
 
 ###2016-06-15
-
 - Support for Digital Devices Github drivers.
 
 ###2016-06-12
-
 - V6.2 Beta 23 TBS and OpenElec Builds uploaded.  Digital Devices still a pain in my ass, this ddexp build may work. V6 Beta 22 and 23 ddexp uploaded.
 
 ###2016-06-10
-
 - V6.2 Beta 22 TBS and OpenElec Builds uploaded.  Digital Devices being a pain, may be a while....
 
 ###2016-04-01
-
 - Display and text updates.  Don't worry, I'm not going to be like a 2nd Squid with CA updates three times a day...
 
 ###2016-03-28a
-
 - Updated TVHeadEnd Docker link, was pointing to the MythTV Docker thread.  Sorry Saarg ;)
 
 ###2016-03-28
-
 - Updated V6.1.9 and V6.2 Beta 20 to include lirc_zilog module
 
 ###2016-03-27a
-
 - Some display tweaks and ability to downgrade.
 
 ###2016-03-27
-
 - unRAID V6.2 Beta 20 builds done.
 
 ###2016-03-24
-
 - Detect if Unraid V6.2 or later and install appropriate version.
 
 ###2016-03-23
-
 - Updates to page and useful links added.
 
 ###2016-03-20
-
 - V6.2 Beta 18 and Beta 19 release of Digital Devices Experimental.
 
 ###2016-03-19
-
 - Internal release for the V6.2 Beta 19 release. OpenElec and TBS Builds.
 
 ###2016-03-12
-
 - Internal release for the V6.2 Beta 18 release.  OpenElec and TBS Builds.
 
 </CHANGES>
