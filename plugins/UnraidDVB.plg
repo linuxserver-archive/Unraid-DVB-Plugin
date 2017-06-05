@@ -233,9 +233,15 @@ if [[ -f /boot/bzmodules ]]; then
 	echo "V6.4 compatible"
 else
 	echo "Not yet V6.4 compatible, upgrade via LimeTech plugin to get access to V6.4 DVB Builds";
-	mv -f /usr/local/emhttp/plugins/UnraidDVB/include/exec63.php /usr/local/emhttp/plugins/UnraidDVB/include/exec.php;
+if [[ -f /usr/local/emhttp/plugins/UnraidDVB/include/exec63.php ]]; then
+  mv -f /usr/local/emhttp/plugins/UnraidDVB/include/exec63.php /usr/local/emhttp/plugins/UnraidDVB/include/exec.php;
+fi
+if [[ -f /usr/local/emhttp/plugins/UnraidDVB/include/install63.php ]]; then
 	mv -f /usr/local/emhttp/plugins/UnraidDVB/include/install63.php /usr/local/emhttp/plugins/UnraidDVB/include/install.php;
-        mv -f /etc/unraid-media /lib/firmware/
+fi
+if [[ -f /etc/unraid-media ]]; then
+  mv -f /etc/unraid-media /lib/firmware/
+fi
 fi
 </INLINE>
 </FILE>
