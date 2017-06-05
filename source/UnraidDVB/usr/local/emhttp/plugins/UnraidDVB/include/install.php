@@ -71,12 +71,12 @@ echo "\n";
 $bzimageMD5 = explode(" ",file_get_contents("/tmp/mediabuild/bzimage.md5"));
 $bzrootMD5 = explode(" ",file_get_contents("/tmp/mediabuild/bzroot.md5"));
 $bzroot_guiMD5 = explode(" ",file_get_contents("/tmp/mediabuild/bzroot-gui.md5"));
-$bzmodulesMD5 = explode(" ",file_get_contents("/tmp/mediabuild/bzmodules.md5"));
-$bzfirmwareMD5 = explode(" ",file_get_contents("/tmp/mediabuild/bzfirmware.md5"));
+$bzmodules_guiMD5 = explode(" ",file_get_contents("/tmp/mediabuild/bzmodules.md5"));
+$bzfirmware_guiMD5 = explode(" ",file_get_contents("/tmp/mediabuild/bzfirmware.md5"));
 
 echo "Checking MD5's: ";
 
-if ( md5_file("/tmp/mediabuild/bzimage") != $bzimageMD5[0] || md5_file("/tmp/mediabuild/bzroot") != $bzrootMD5[0]  || md5_file("/tmp/mediabuild/bzroot-gui") != $bzroot_guiMD5[0]  || md5_file("/tmp/mediabuild/bzmodules") != $bzmodulesMD5[0]  || md5_file("/tmp/mediabuild/bzfirmware") != $bzfirmwareMD5[0] ) {
+if ( md5_file("/tmp/mediabuild/bzimage") != $bzimageMD5[0] || md5_file("/tmp/mediabuild/bzroot") != $bzrootMD5[0]  || md5_file("/tmp/mediabuild/bzroot-gui") != $bzroot_guiMD5[0] | | md5_file("/tmp/mediabuild/bzmodules") != $bzmodulesMD5[0]  || md5_file("/tmp/mediabuild/bzfirmware") != $bzfirmwareMD5[0] ) {
   echo "failed!\n\n";
   exit(1);
 } else {
