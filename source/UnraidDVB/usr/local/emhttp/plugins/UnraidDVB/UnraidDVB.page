@@ -25,7 +25,7 @@ if ( is_file("/tmp/plugins/UnraidDVB.plg") ) {
 }
 
 #DVB Version
-$dvb = (is_file("/etc/unraid-media")) ? parse_ini_file("/etc/unraid-media") : array();
+$dvb = (is_file("/lib/firmware/unraid-media")) ? parse_ini_file("/lib/firmware/unraid-media") : array();
 $dvbbase = $dvb['base'];
 $dvbdriver = $dvb['driver'];
 $reboot = (is_file("/tmp/mediabuild/reboot")) ? "true" : "false";
