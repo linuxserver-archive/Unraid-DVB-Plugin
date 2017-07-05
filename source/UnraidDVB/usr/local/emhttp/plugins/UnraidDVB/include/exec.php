@@ -54,7 +54,7 @@ case 'build_buttons':
     if ( strpos($line,"href") ) {
       $temp = substr($line,strpos($line,"href"));
       $temp2 = explode('"',$temp);
-      if ( $temp2[1][0] == "?" || $temp2[1][0] == "/" ) {
+      if ( $temp2[1][0] == "?" || $temp2[1][0] == "/" || $temp2[1][0] == "." ) {
         continue;
       }
       $ver = str_replace("/","",$temp2[1]);
@@ -71,7 +71,7 @@ case 'build_buttons':
     unset($mediaTemp);
     foreach ($contents as $line) {
       if ( strpos($line,"href") ) {
-        if ( (stripos($line,"parent")) || (stripos($line,"../")) || (stripos($line,"images/")) || (stripos($line,"podcast/")) || (stripos($line,"unraid-dvb"))) {
+        if ( (stripos($line,"parent")) || (stripos($line,"../"))) {          continue;
           continue;
         }
         $temp = substr($line,strpos($line,"href"));
