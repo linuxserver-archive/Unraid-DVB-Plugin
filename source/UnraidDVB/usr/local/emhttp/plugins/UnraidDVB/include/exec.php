@@ -71,7 +71,7 @@ case 'build_buttons':
     unset($mediaTemp);
     foreach ($contents as $line) {
       if ( strpos($line,"href") ) {
-        if ( stripos($line,"parent") ) {
+        if ( (stripos($line,"parent")) || (stripos($line,"../")) || (stripos($line,"images/")) || (stripos($line,"podcast/")) || (stripos($line,"unraid-dvb"))) {
           continue;
         }
         $temp = substr($line,strpos($line,"href"));
