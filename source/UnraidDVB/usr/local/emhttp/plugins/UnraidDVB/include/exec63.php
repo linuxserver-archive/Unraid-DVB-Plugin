@@ -36,7 +36,7 @@ case 'build_buttons':
   $types['stock']              = "unRaid";
 
 
-  $downloadURL = "https://files.linuxserver.io/unraid-dvb/";
+  $downloadURL = "https://mirror.linuxserver.io/unraid-dvb/";
   $tempFile = $mediaPaths['tempFiles']."/temp";
   $description = $mediaPaths['tempFiles']."/description";
 
@@ -54,7 +54,7 @@ case 'build_buttons':
     if ( strpos($line,"href") ) {
       $temp = substr($line,strpos($line,"href"));
       $temp2 = explode('"',$temp);
-      if ( $temp2[1][0] == "?" || $temp2[1][0] == "/" ) {
+      if ( $temp2[1][0] == "?" || $temp2[1][0] == "/" || $temp2[1][0] == "." ) {
         continue;
       }
       $ver = str_replace("/","",$temp2[1]);
@@ -71,7 +71,7 @@ case 'build_buttons':
     unset($mediaTemp);
     foreach ($contents as $line) {
       if ( strpos($line,"href") ) {
-        if ( stripos($line,"parent") ) {
+        if ( stripos($line,"parent") || stripos($line,"../") ) {
           continue;
         }
         $temp = substr($line,strpos($line,"href"));
