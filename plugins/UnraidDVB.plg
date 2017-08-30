@@ -6,7 +6,7 @@
 <!ENTITY md5       "0012bdfd90d2714096ac925b7ae26a95">
 <!ENTITY launch    "Settings/UnraidDVB">
 <!ENTITY plugdir   "/usr/local/emhttp/plugins/&name;">
-<!ENTITY github    "linuxserver/Unraid-DVB-Plugin">
+<!ENTITY github    "chbmb/Unraid-DVB-Plugin">
 <!ENTITY pluginURL "https://raw.githubusercontent.com/&github;/master/plugins/&name;.plg">
 ]>
 
