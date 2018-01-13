@@ -13,6 +13,9 @@
 <PLUGIN name="&name;" author="&author;" version="&version;" launch="&launch;" pluginURL="&pluginURL;">
 
 <CHANGES>
+###2018-01-13
+- Plugin update to accomodate v6.4.0 stable release
+
 ###2017-08-30
 - Essential plugin update to accomodate change in linuxserver file server.
 
