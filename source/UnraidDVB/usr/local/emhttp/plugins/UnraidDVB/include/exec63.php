@@ -36,7 +36,7 @@ case 'build_buttons':
   $types['stock']              = "unRaid";
 
 
-  $downloadURL = "https://mirror.linuxserver.io/unraid-dvb-63/";
+  $downloadURL = "https://mirror.linuxserver.io/unraid-dvb/";
   $tempFile = $mediaPaths['tempFiles']."/temp";
   $description = $mediaPaths['tempFiles']."/description";
 
