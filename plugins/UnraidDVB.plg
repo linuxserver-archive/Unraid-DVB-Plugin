@@ -2,7 +2,7 @@
 <!DOCTYPE PLUGIN [
 <!ENTITY name      "UnraidDVB">
 <!ENTITY author    "CHBMB/Squid">
-<!ENTITY version   "2017.08.30">
+<!ENTITY version   "2018.03.12">
 <!ENTITY md5       "749567dc80a4675a73af63237fbd83b8">
 <!ENTITY launch    "Settings/UnraidDVB">
 <!ENTITY plugdir   "/usr/local/emhttp/plugins/&name;">
@@ -13,6 +13,9 @@
 <PLUGIN name="&name;" author="&author;" version="&version;" launch="&launch;" pluginURL="&pluginURL;">
 
 <CHANGES>
+###2018-03-12
+- Essential update to ensure v6.5.0 compatibility
+
 ###2017-08-30
 - Essential update to accomodate change in linuxserver file server.
 
@@ -263,6 +266,7 @@ The 'post-install' script
 # Written by Saarg for the MediaTreeCheck Plugin
 if [ -d /dev/dvb ]; then
   chown -R nobody:users /dev/dvb
+  chmod -R 777 /dev/dvb
 fi
 
 # Parse DVB Card Details
