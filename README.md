@@ -11,7 +11,7 @@ Find us for support at:
 **unRAID DVB Edition**
 
 This plugin from linuxserver.io allows you to easily install a modified unRAID version with DVB drivers compiled.  
-Remember to add --device=/dev/dvb to the extra parameters in the MythTV/TVHeadEnd docker.  (Already present for minisatip)
+Remember to add `--device=/dev/dvb` to the extra parameters in the MythTV/TVHeadEnd docker.  (Already present for minisatip)
 
 There are three versions available:  
 * LibreELEC for most DVB cards.  
