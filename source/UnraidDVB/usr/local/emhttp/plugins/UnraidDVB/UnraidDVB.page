@@ -31,7 +31,7 @@ $dvbdriver = $dvb['driver'];
 $reboot = (is_file("/tmp/mediabuild/reboot")) ? "true" : "false";
 
 #Mediatree Kernel
-$kernel = trim(shell_exec( "uname -r" ));
+$kernel = trim(shell_exec( "uname -r | cut -d- -f1" ));
 $mediatree = file_exists( "/lib/firmware/unraid-media" ) ? "yes" : "no";
 $dvb_adapter = file_exists( "/dev/dvb/adapter0/frontend0") ? "yes" : "no";
 
@@ -183,6 +183,11 @@ $(function()
 			</tr>
 
 			<tr>
+				<td>Linux Kernel Version:</td>
+				<td style="color:green"><b><?=$kernel?></b></td>
+			</tr>
+
+			<tr>
 				<td>DVB Version:</td>
 				<td style="color:green"><b><?=$dvbbase?></b></td>
 			</tr>
@@ -301,21 +306,25 @@ $(function()
 				<td><a href="https://forums.lime-technology.com/topic/46194-unraid-dvb-edition/#comment-455031" style="color:green" target="_blank"><b>Digital Devices ddbridge.conf Setup Info</b></a></td>
 			</tr>
 
-      <tr>
-      	<td><a href="https://forums.lime-technology.com/topic/49898-support-linuxserverio-tvheadend/" style="color:green" target="_blank"><b>TVHeadEnd Docker Container by linuxserver</b></a></td>
-      </tr>
+			<tr>
+				<td><a href="https://www.linuxtv.org/wiki/index.php/Main_Page" style="color:green" target="_blank"><b>Linux TV wiki - Check if your hardware is supported here</b></a></td>
+			</tr>
 
-      <tr>
-      	<td><a href="https://lime-technology.com/forums/topic/40463-support-linuxserverio-plex-media-server/" style="color:green" target="_blank"><b>Plex Docker Container by linuxserver</b></a></td>
-      </tr>
+			<tr>
+				<td><a href="https://forums.lime-technology.com/topic/49898-support-linuxserverio-tvheadend/" style="color:green" target="_blank"><b>TVHeadEnd Docker Container by linuxserver</b></a></td>
+			</tr>
+
+			<tr>
+				<td><a href="https://lime-technology.com/forums/topic/40463-support-linuxserverio-plex-media-server/" style="color:green" target="_blank"><b>Plex Docker Container by linuxserver</b></a></td>
+			</tr>
 
 			<tr>
 				<td><a href="https://forums.lime-technology.com/topic/48411-support-linuxserverio-minisatip/" style="color:green" target="_blank"><b>SatIP Docker Container by linuxserver</b></a></td>
 			</tr>
 
-      <tr>
-        <td><a href="https://forums.lime-technology.com/topic/50548-support-linuxserverio-oscam/" style="color:green" target="_blank"><b>Oscam Docker Container by linuxserver</b></a></td>
-      </tr>
+			<tr>
+        			<td><a href="https://forums.lime-technology.com/topic/50548-support-linuxserverio-oscam/" style="color:green" target="_blank"><b>Oscam Docker Container by linuxserver</b></a></td>
+      			</tr>
 
 			<tr>
 				<td><a href="https://lime-technology.com/forums/topic/68338-support-linuxserverio-webgrabplus/" style="color:green" target="_blank"><b>WebGrab Plus Docker Container by linuxserver</b></a></td>
@@ -337,8 +346,8 @@ $(function()
 				<td><a href="https://forums.lime-technology.com/topic/47872-support-dvblink-kerio-connect-apache-php/" style="color:green" target="_blank"><b>DVB Link Docker Container by chvb</b></a></td>
 			</tr>
 
-      <tr>
-        <td><a href="https://forums.lime-technology.com/topic/47751-support-huxy-xmltv-schedules-direct/" style="color:green" target="_blank"><b>XMLTV Schedules Direct Docker Container by huxy</b></a></td>
-      </tr>
+			<tr>
+				<td><a href="https://forums.lime-technology.com/topic/47751-support-huxy-xmltv-schedules-direct/" style="color:green" target="_blank"><b>XMLTV Schedules Direct Docker Container by huxy</b></a></td>
+			</tr>
     </table>
 </div>
