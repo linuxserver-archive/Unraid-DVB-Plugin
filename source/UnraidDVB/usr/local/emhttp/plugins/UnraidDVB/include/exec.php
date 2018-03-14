@@ -29,14 +29,12 @@ case 'show_description':
 case 'build_buttons':
   $types['dd']                 = "Digital Devices (Github)";
   $types['libreelec']          = "LibreELEC";
-  $types['tbs-official-dvbst'] = "TBS (Official) DVB-S/T";
-  $types['tbs-official-dvbc']  = "TBS (Official) DVB-C";
   $types['tbs-crazy-dvbst']    = "TBS (CrazyCat) DVB-S/T";
   $types['tbs-os']             = "TBS (Open Source)";
   $types['stock']              = "unRaid";
 
 
-  $downloadURL = "https://mirror.linuxserver.io/unraid-dvb-rc/";
+  $downloadURL = "https://mirror.linuxserver.io/unraid-dvb/";
   $tempFile = $mediaPaths['tempFiles']."/temp";
   $description = $mediaPaths['tempFiles']."/description";
 

@@ -2,8 +2,8 @@
 <!DOCTYPE PLUGIN [
 <!ENTITY name      "UnraidDVB">
 <!ENTITY author    "CHBMB/Squid">
-<!ENTITY version   "2018.03.12">
-<!ENTITY md5       "cfc983089845937e6ce8874b68da5b8b">
+<!ENTITY version   "2018.03.14">
+<!ENTITY md5       "5eae737027217e3aa849816ead233c14">
 <!ENTITY launch    "Settings/UnraidDVB">
 <!ENTITY plugdir   "/usr/local/emhttp/plugins/&name;">
 <!ENTITY github    "linuxserver/Unraid-DVB-Plugin">
@@ -13,6 +13,9 @@
 <PLUGIN name="&name;" author="&author;" version="&version;" launch="&launch;" pluginURL="&pluginURL;">
 
 <CHANGES>
+###2018-03-14
+- Further update to ensure v6.5.0 compatibility, v6.3.x support deprecated.
+
 ###2018-03-12
 - Essential update to ensure v6.5.0 compatibility
 
@@ -241,29 +244,11 @@ The 'post-install' script
 -->
 <FILE Run="/bin/bash">
 <INLINE>
-if [[ -f /boot/bzmodules ]]; then
-	echo "V6.4 compatible"
-else
-	echo "Not yet V6.4 compatible, upgrade via LimeTech plugin to get access to V6.4 DVB Builds";
-if [[ -f /usr/local/emhttp/plugins/UnraidDVB/include/exec63.php ]]; then
-  mv -f /usr/local/emhttp/plugins/UnraidDVB/include/exec63.php /usr/local/emhttp/plugins/UnraidDVB/include/exec.php;
-fi
-if [[ -f /usr/local/emhttp/plugins/UnraidDVB/include/install63.php ]]; then
-	mv -f /usr/local/emhttp/plugins/UnraidDVB/include/install63.php /usr/local/emhttp/plugins/UnraidDVB/include/install.php;
-fi
-if [[ -f /etc/unraid-media ]]; then
-  mv -f /etc/unraid-media /lib/firmware/
-fi
-fi
-</INLINE>
-</FILE>
 
-<!--
-The 'post-install' script
--->
-<FILE Run="/bin/bash">
-<INLINE>
-# Written by Saarg for the MediaTreeCheck Plugin
+if [[ ! -f /boot/bzmodules ]]; then
+	echo "Needs unRAID v6.4.0 or higher"
+fi
+
 if [ -d /dev/dvb ]; then
   chown -R nobody:users /dev/dvb
   chmod -R 777 /dev/dvb
