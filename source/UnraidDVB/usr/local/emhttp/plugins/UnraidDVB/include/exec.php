@@ -39,9 +39,6 @@ case 'build_buttons':
   $types['tbs-crazy-dvbst']    = "TBS (CrazyCat) DVB-S/T";
   $types['tbs-os']             = "TBS (Open Source)";
   $types['stock']              = "unRaid";
-	$types['ddexp']              = "Digital Devices (Other?!)";
-	$types['tbs']                = "TBS?!?!";
-
 
   $downloadURL = "https://mirror.linuxserver.io/unraid-dvb/";
   $tempFile = $mediaPaths['tempFiles']."/temp";
