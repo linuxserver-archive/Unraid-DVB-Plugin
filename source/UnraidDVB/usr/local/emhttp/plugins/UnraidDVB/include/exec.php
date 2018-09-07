@@ -46,7 +46,7 @@ case 'build_buttons':
 
   @unlink($tempFile);
 
-$xmlRaw = file_get_contents("https://lsio.ams3.digitaloceanspaces.com/?max-keys=500000");
+$xmlRaw = file_get_contents("https://lsio.ams3.digitaloceanspaces.com/?prefix=unraid-dvb/");
 $o = TypeConverter::xmlToArray($xmlRaw,TypeConverter::XML_GROUP);
 foreach ($o['Contents'] as $test) {
   if (startsWith($test['Key'],"unraid-dvb-old-builds")) {
@@ -64,7 +64,7 @@ foreach (array_keys($folder) as $path) {
 	$tmpArray['imageType'] = $types[$imageType];
 	$tmpArray['imageURL'] = "https://lsio.ams3.digitaloceanspaces.com/$path";
 	$tmpArray['imageVersion'] = str_replace("-",".",basename(dirname($path)));
-	if ( is_file($tmpArray['imageURL']."/unraid-media") ) {
+	if ( ! strpos($tmpArray['imageURL'],"stock") ) {
 		download_url($tmpArray['imageURL']."/unraid-media",$description);
     $tempVar = parse_ini_file($description);
 	  $tmpArray['imageDescription'] = "This will install the ".$tempVar['base']." unRAID DVB build with V".$tempVar['driver']. " drivers";
