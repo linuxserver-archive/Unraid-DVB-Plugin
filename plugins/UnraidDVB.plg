@@ -2,8 +2,8 @@
 <!DOCTYPE PLUGIN [
 <!ENTITY name      "UnraidDVB">
 <!ENTITY author    "CHBMB/Squid">
-<!ENTITY version   "2018.03.14">
-<!ENTITY md5       "5eae737027217e3aa849816ead233c14">
+<!ENTITY version   "2018.09.14">
+<!ENTITY md5       "12ad51b154a5e03b2c79bcc0cf3fe1dc">
 <!ENTITY launch    "Settings/UnraidDVB">
 <!ENTITY plugdir   "/usr/local/emhttp/plugins/&name;">
 <!ENTITY github    "linuxserver/Unraid-DVB-Plugin">
@@ -13,6 +13,9 @@
 <PLUGIN name="&name;" author="&author;" version="&version;" launch="&launch;" pluginURL="&pluginURL;">
 
 <CHANGES>
+###2018-09-14
+- Update to change backend storage to Digital Ocean.  Mandatory update.
+
 ###2018-03-14
 - Further update to ensure v6.5.0 compatibility, v6.3.x support deprecated.
 

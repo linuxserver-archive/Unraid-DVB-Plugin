@@ -1,4 +1,16 @@
 <?PHP
+require_once("/usr/local/emhttp/plugins/UnraidDVB/include/xmlHelpers.php");
+
+function download_url($url, $path = "", $bg = false, $timeout=45){
+	if ( ! strpos($url,"?") ) {
+		$url .= "?".time(); # append time to always wind up requesting a non cached version
+	}
+	exec("curl --compressed --max-time $timeout --silent --insecure --location --fail ".($path ? " -o '$path' " : "")." $url ".($bg ? ">/dev/null 2>&1 &" : "2>/dev/null"), $out, $exit_code );
+	return ($exit_code === 0 ) ? implode("\n", $out) : false;
+}
+function startsWith($haystack, $needle) {
+	return $needle === "" || strripos($haystack, $needle, -strlen($haystack)) !== FALSE;
+}
 
 #Variables
 $mediaPaths['tempFiles']  = "/tmp/mediabuild";
@@ -8,11 +20,6 @@ $mediaPaths['reboot'] = $mediaPaths['tempFiles']."/reboot";
 #If temp dir does not exist then create.
 if ( ! is_dir($mediaPaths['tempFiles']) ) {
   exec("mkdir -p ".$mediaPaths['tempFiles']);
-}
-
-function download_url($url, $path = "", $bg = false){
-  exec("curl --max-time 60 --silent --insecure --location --fail ".($path ? " -o '$path' " : "")." $url ".($bg ? ">/dev/null 2>&1 &" : "2>/dev/null"), $out, $exit_code );
-  return ($exit_code === 0 ) ? implode("\n", $out) : false;
 }
 
 switch ($_POST['action']) {
@@ -33,78 +40,40 @@ case 'build_buttons':
   $types['tbs-os']             = "TBS (Open Source)";
   $types['stock']              = "unRaid";
 
-
   $downloadURL = "https://mirror.linuxserver.io/unraid-dvb/";
   $tempFile = $mediaPaths['tempFiles']."/temp";
   $description = $mediaPaths['tempFiles']."/description";
 
   @unlink($tempFile);
 
-  download_url($downloadURL, $tempFile);
-
-  if ( ! is_file($tempFile) ) {
-    echo "Error Downloading Source Files";
-    break;
+$xmlRaw = file_get_contents("https://lsio.ams3.digitaloceanspaces.com/?prefix=unraid-dvb/");
+$o = TypeConverter::xmlToArray($xmlRaw,TypeConverter::XML_GROUP);
+foreach ($o['Contents'] as $test) {
+  if (startsWith($test['Key'],"unraid-dvb-old-builds")) {
+    continue;
   }
-
-  $contents = explode("\n",file_get_contents($tempFile));
-  foreach ($contents as $line) {
-    if ( strpos($line,"href") ) {
-      $temp = substr($line,strpos($line,"href"));
-      $temp2 = explode('"',$temp);
-      if ( $temp2[1][0] == "?" || $temp2[1][0] == "/" || $temp2[1][0] == "." ) {
-        continue;
-      }
-      $ver = str_replace("/","",$temp2[1]);
-      $versionInfo['unRaidVersion'] = $ver;
-      $versionInfo['basePath'] = $downloadURL.$ver;
-      $versions[] = $versionInfo;
-    }
+  if (startsWith($test['Key'],"unraid-dvb")) {
+    $folder[dirname($test['Key'])] = true;
   }
+}
 
-  foreach ( $versions as $unRaidVersion) {
-    download_url($unRaidVersion['basePath'],$tempFile);
-
-    $contents = explode("\n",file_get_contents($tempFile));
-    unset($mediaTemp);
-    foreach ($contents as $line) {
-      if ( strpos($line,"href") ) {
-        if ( stripos($line,"parent") || stripos($line,"../") ) {
-          continue;
-        }
-        $temp = substr($line,strpos($line,"href"));
-        $temp2 = explode('"',$temp);
-        if ( $temp2[1][0] == "?" ) {
-          continue;
-        }
-        $m[1] = $temp2[1];
-        $type = str_replace("/","",$m[1]);
-        if ( $types[$type] ) {
-          $mediaTypes['imageType'] = $types[$type];
-        } else {
-          $mediaTypes['imageType'] = $type;
-        }
-
-        $mediaTypes['imageURL'] = $unRaidVersion['basePath']."/".$m[1];
-        $mediaTypes['imageVersion'] = str_replace("-",".",$unRaidVersion['unRaidVersion']);
-        $mediaTypes['imageVersion'] = str_replace("/","",$mediaTypes['imageVersion']);
-
-# now get the description
-
-        download_url($mediaTypes['imageURL']."/unraid-media",$description);
-
-        if ( is_file($description) ) {
-          $mediaTypes['imageDescription'] = $tempVar = parse_ini_file($description);
-			    $mediaTypes['imageDescription'] = "This will install the ".$tempVar['base']." unRAID DVB build with V".$tempVar['driver']. " drivers";
-        } else {
-          $mediaTypes['imageDescription'] = "This will install stock unRAID";
-        }
-        @unlink($description);
-        $mediaVersions[] = $mediaTypes;
-      }
-    }
-  }
-  unlink($tempFile);
+foreach (array_keys($folder) as $path) {
+	if ($path == ".") { continue; }
+	$imageType = basename($path);
+	if ( !$types[$imageType] ) { continue; }
+	$tmpArray['imageType'] = $types[$imageType];
+	$tmpArray['imageURL'] = "https://lsio.ams3.digitaloceanspaces.com/$path";
+	$tmpArray['imageVersion'] = str_replace("-",".",basename(dirname($path)));
+	if ( ! strpos($tmpArray['imageURL'],"stock") ) {
+		download_url($tmpArray['imageURL']."/unraid-media",$description);
+    $tempVar = parse_ini_file($description);
+	  $tmpArray['imageDescription'] = "This will install the ".$tempVar['base']." unRAID DVB build with V".$tempVar['driver']. " drivers";
+  } else {
+    $tmpArray['imageDescription'] = "This will install stock unRAID";
+	}
+	@unlink($description);
+	$mediaVersions[] = $tmpArray;
+}
 
   $build = array();
   foreach ($mediaVersions as $key => $row){

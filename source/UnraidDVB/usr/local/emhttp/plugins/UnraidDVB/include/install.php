@@ -55,16 +55,16 @@ $downloadURL = $sources[$build]['imageURL'];
 
 echo "Base URL: $downloadURL\n\n";
 
-download($downloadURL."bzimage","/tmp/mediabuild/bzimage",$error);
-download($downloadURL."bzroot","/tmp/mediabuild/bzroot",$error);
-download($downloadURL."bzroot-gui","/tmp/mediabuild/bzroot-gui",$error);
-download($downloadURL."bzmodules","/tmp/mediabuild/bzmodules",$error);
-download($downloadURL."bzfirmware","/tmp/mediabuild/bzfirmware",$error);
-download($downloadURL."bzimage.md5","/tmp/mediabuild/bzimage.md5",$error);
-download($downloadURL."bzroot.md5","/tmp/mediabuild/bzroot.md5",$error);
-download($downloadURL."bzroot-gui.md5","/tmp/mediabuild/bzroot-gui.md5",$error);
-download($downloadURL."bzmodules.md5","/tmp/mediabuild/bzmodules.md5",$error);
-download($downloadURL."bzfirmware.md5","/tmp/mediabuild/bzfirmware.md5",$error);
+download($downloadURL."/bzimage","/tmp/mediabuild/bzimage",$error);
+download($downloadURL."/bzroot","/tmp/mediabuild/bzroot",$error);
+download($downloadURL."/bzroot-gui","/tmp/mediabuild/bzroot-gui",$error);
+download($downloadURL."/bzmodules","/tmp/mediabuild/bzmodules",$error);
+download($downloadURL."/bzfirmware","/tmp/mediabuild/bzfirmware",$error);
+download($downloadURL."/bzimage.md5","/tmp/mediabuild/bzimage.md5",$error);
+download($downloadURL."/bzroot.md5","/tmp/mediabuild/bzroot.md5",$error);
+download($downloadURL."/bzroot-gui.md5","/tmp/mediabuild/bzroot-gui.md5",$error);
+download($downloadURL."/bzmodules.md5","/tmp/mediabuild/bzmodules.md5",$error);
+download($downloadURL."/bzfirmware.md5","/tmp/mediabuild/bzfirmware.md5",$error);
 
 echo "\n";
 
