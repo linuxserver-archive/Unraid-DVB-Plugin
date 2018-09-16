@@ -87,6 +87,7 @@ if ( md5_file("/tmp/mediabuild/bzimage") != $bzimageMD5[0] || md5_file("/tmp/med
   exec("cp /tmp/mediabuild/bzroot-gui /boot/bzroot-gui");
   exec("cp /tmp/mediabuild/bzmodules /boot/bzmodules");
   exec("cp /tmp/mediabuild/bzfirmware /boot/bzfirmware");
+  @unlink("/boot/config/plugins/dynamix.plg");
   echo "You must reboot your server\n\n";
   file_put_contents("/tmp/mediabuild/reboot","reboot");
 
