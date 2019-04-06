@@ -2,8 +2,8 @@
 <!DOCTYPE PLUGIN [
 <!ENTITY name      "UnraidDVB">
 <!ENTITY author    "LinuxServer.io">
-<!ENTITY version   "2019.04.06a">
-<!ENTITY md5       "f30776b096b7fa7aff628a4c231243dd">
+<!ENTITY version   "2019.04.06b">
+<!ENTITY md5       "b8a5c5cf6d2a0733e560f02e5a0ac9d3">
 <!ENTITY launch    "Settings/UnraidDVB">
 <!ENTITY plugdir   "/usr/local/emhttp/plugins/&name;">
 <!ENTITY github    "linuxserver/Unraid-DVB-Plugin">
@@ -13,6 +13,9 @@
 <PLUGIN name="&name;" author="&author;" version="&version;" launch="&launch;" pluginURL="&pluginURL;" support="https://forums.unraid.net/topic/46194-plugin-linuxserverio-unraid-dvb/" icon="tv">
 
 <CHANGES>
+###2019-04-06b
+- Prevent premature closing of download box
+
 ###2019-04-06a
 - Change to SHA256, subtle rebranding due to Unraid changes.
 
