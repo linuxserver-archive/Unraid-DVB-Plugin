@@ -1,6 +1,6 @@
-**unRAID DVB Edition**
+**Unraid DVB Edition**
 
-This plugin from linuxserver.io allows you to easily install a modified unRAID version with DVB drivers compiled.  
+This plugin from LinuxServer.io allows you to easily install a modified unRAID version with DVB drivers compiled.  
 Remember to add --device=/dev/dvb to the extra parameters in any docker container.(Already present for Sat-IP)
 
 There are three versions available:  
