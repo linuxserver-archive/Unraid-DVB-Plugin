@@ -38,7 +38,7 @@ case 'build_buttons':
   $types['libreelec']          = "LibreELEC";
   $types['tbs-crazy-dvbst']    = "TBS (CrazyCat) DVB-S/T";
   $types['tbs-os']             = "TBS (Open Source)";
-  $types['stock']              = "unRaid";
+  $types['stock']              = "Unraid";
 
   $downloadURL = "https://mirror.linuxserver.io/unraid-dvb/";
   $tempFile = $mediaPaths['tempFiles']."/temp";
@@ -67,9 +67,9 @@ foreach (array_keys($folder) as $path) {
 	if ( ! strpos($tmpArray['imageURL'],"stock") ) {
 		download_url($tmpArray['imageURL']."/unraid-media",$description);
     $tempVar = parse_ini_file($description);
-	  $tmpArray['imageDescription'] = "This will install the ".$tempVar['base']." unRAID DVB build with V".$tempVar['driver']. " drivers";
+	  $tmpArray['imageDescription'] = "This will install the ".$tempVar['base']." Unraid DVB build with V".$tempVar['driver']. " drivers";
   } else {
-    $tmpArray['imageDescription'] = "This will install stock unRAID";
+    $tmpArray['imageDescription'] = "This will install stock Unraid";
 	}
 	@unlink($description);
 	$mediaVersions[] = $tmpArray;
@@ -99,9 +99,9 @@ foreach (array_keys($folder) as $path) {
   $i = 0;
   foreach ($sources as $source) {
     $source['id'] = $i;
-    if ( $source['imageType'] == "unRaid" ) {
-      $buttons['unRaid']['name'] = "unRaid";
-      $buttons['unRaid']['builds'][] = $source;
+    if ( $source['imageType'] == "Unraid" ) {
+      $buttons['Unraid']['name'] = "Unraid";
+      $buttons['Unraid']['builds'][] = $source;
     } else {
       $buttons['MediaBuilds']['name'] = "Media Builds";
       $buttons['MediaBuilds']['builds'][] = $source;
@@ -110,10 +110,10 @@ foreach (array_keys($folder) as $path) {
   }
   $o = "<center>";
   foreach ( $buttons as $button ) {
-    if ( $button['name'] == "unRaid" ) {
-      $o .= "Stock unRaid Builds: <select id='unRaid' onchange='showDescription0(value);'>";
+    if ( $button['name'] == "Unraid" ) {
+      $o .= "Stock Unraid Builds: <select id='unRaid' onchange='showDescription0(value);'>";
     } else {
-      $o .= "DVB unRAID Builds: <select id='Media' onchange='showDescription1(value);'>";
+      $o .= "DVB Unraid Builds: <select id='Media' onchange='showDescription1(value);'>";
     }
 
     $o .= "<option value='default' disabled selected>Select an image to install</option>";
