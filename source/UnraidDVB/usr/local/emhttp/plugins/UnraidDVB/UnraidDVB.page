@@ -107,6 +107,7 @@ function installBuild()
   },
   function()
   {
+   $("#sb-nav-close").css("visibility","hidden");
     openBox("/plugins/UnraidDVB/include/install.sh&arg1="+selected,"Installing "+selectedText,500,500);
     setInterval(function() {
       checkReboot();
