@@ -2,18 +2,18 @@
 <!DOCTYPE PLUGIN [
 <!ENTITY name      "UnraidDVB">
 <!ENTITY author    "LinuxServer.io">
-<!ENTITY version   "2019.04.06">
-<!ENTITY md5       "71ce9414312657bab6cfca70da55e37e">
+<!ENTITY version   "2019.04.06a">
+<!ENTITY md5       "f30776b096b7fa7aff628a4c231243dd">
 <!ENTITY launch    "Settings/UnraidDVB">
 <!ENTITY plugdir   "/usr/local/emhttp/plugins/&name;">
 <!ENTITY github    "linuxserver/Unraid-DVB-Plugin">
 <!ENTITY pluginURL "https://raw.githubusercontent.com/&github;/master/plugins/&name;.plg">
 ]>
 
-<PLUGIN name="&name;" author="&author;" version="&version;" launch="&launch;" pluginURL="&pluginURL;">
+<PLUGIN name="&name;" author="&author;" version="&version;" launch="&launch;" pluginURL="&pluginURL;" support="https://forums.unraid.net/topic/46194-plugin-linuxserverio-unraid-dvb/" icon="tv">
 
 <CHANGES>
-###2019-04-06
+###2019-04-06a
 - Change to SHA256, subtle rebranding due to Unraid changes.
 
 ###2018-09-16
