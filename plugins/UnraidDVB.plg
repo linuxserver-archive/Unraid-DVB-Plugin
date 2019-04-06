@@ -1,9 +1,9 @@
 <?xml version='1.0' standalone='yes'?>
 <!DOCTYPE PLUGIN [
 <!ENTITY name      "UnraidDVB">
-<!ENTITY author    "CHBMB/Squid">
-<!ENTITY version   "2018.09.16">
-<!ENTITY md5       "c0e59c910fe7a593da8c9d339bd8fe5e">
+<!ENTITY author    "LinuxServer.io">
+<!ENTITY version   "2019.04.06">
+<!ENTITY md5       "71ce9414312657bab6cfca70da55e37e">
 <!ENTITY launch    "Settings/UnraidDVB">
 <!ENTITY plugdir   "/usr/local/emhttp/plugins/&name;">
 <!ENTITY github    "linuxserver/Unraid-DVB-Plugin">
@@ -13,6 +13,9 @@
 <PLUGIN name="&name;" author="&author;" version="&version;" launch="&launch;" pluginURL="&pluginURL;">
 
 <CHANGES>
+###2019-04-06
+- Change to SHA256, subtle rebranding due to Unraid changes.
+
 ###2018-09-16
 - Update to prevent error if dynamix.plg is present.
 
