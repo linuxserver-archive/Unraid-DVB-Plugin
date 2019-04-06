@@ -93,7 +93,7 @@ if ( hash_file("sha256", "/tmp/mediabuild/bzimage") != $bzimageSHA256[0] || hash
   exec("cp /tmp/mediabuild/bzroot-gui /boot/bzroot-gui");
   echo "Copying bzmodules to boot drive\n";
   exec("cp /tmp/mediabuild/bzmodules /boot/bzmodules");
-  echo "Copying bfirmware to boot drive\n";
+  echo "Copying bfirmware to boot drive\n\n";
   exec("cp /tmp/mediabuild/bzfirmware /boot/bzfirmware");
   
   @unlink("/boot/config/plugins/dynamix.plg");
