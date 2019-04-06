@@ -1,6 +1,6 @@
 Menu="Utilities"
-Icon="UnraidDVB.png"
-Title="unRAID DVB Edition"
+Icon="tv"
+Title="Unraid DVB"
 ---
 
 <div align="center"><a href="https://www.linuxserver.io/" target="_blank">
@@ -49,6 +49,14 @@ $adapter7 = shell_exec ( "cat /tmp/mediabuild/adapter7" );
 
 
 <script>
+
+<!-- Upgrade Check-->
+$(function() {
+  if ( typeof caPluginUpdateCheck === "function" ) {
+    caPluginUpdateCheck("UnraidDVB.plg");
+  }
+});
+
 
 var URL = "/plugins/UnraidDVB/include/exec.php";
 
@@ -127,7 +135,7 @@ $(function()
   }
 
   swal({
-    title: "unRAID DVB Edition",
+    title: "Unraid DVB",
     text:  "Updating available builds",
 	imageUrl: "/plugins/UnraidDVB/images/linuxserver.png",
 	imageSize: "300x62",
@@ -299,7 +307,7 @@ $(function()
 <table class="settings">
 
 			<tr>
-				<td><a href="https://forums.unraid.net/topic/46194-unraid-dvb-edition/" style="color:red"target="_blank"><b>unRAID DVB Edition Support Thread</b></a></td>
+				<td><a href="https://forums.unraid.net/topic/46194-unraid-dvb-edition/" style="color:red"target="_blank"><b>Unraid DVB Support Thread</b></a></td>
 			</tr>
 
 			<tr>

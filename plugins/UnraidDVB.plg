@@ -252,7 +252,7 @@ The 'post-install' script
 <INLINE>
 
 if [[ ! -f /boot/bzmodules ]]; then
-	echo "Needs unRAID v6.4.0 or higher"
+	echo "Needs Unraid v6.4.0 or higher"
 fi
 
 if [ -d /dev/dvb ]; then
